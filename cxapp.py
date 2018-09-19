@@ -19,7 +19,7 @@ app.layout = html.Div(children=[
     html.Div(children='''Find the roots of a complex analytic function within a circle of given radius R'''),
     html.Div([
     	html.Label('f(z) = '),
-    	dcc.Input(id='finput', value='(E^(2z)cos(z)-1-sin(z)+z^5)(z(z+2))^2', placeholder='(E^(2z)cos(z)-1-sin(z)+z^5)(z(z+2))^2', type='text', size=100),
+    	dcc.Input(id='finput', value='E^(z^2)sin(z)+z', placeholder='E^(z^2)sin(z)+z', type='text', size=100),
     ]),
 
     html.Div([
