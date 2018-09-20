@@ -17,7 +17,11 @@ server = app.server
 app.layout = html.Div(children=[
     html.H1(children='Rootfinder for complex analytic functions', style={'textAlign':'center'}),
     html.Div([
-    	html.P('The roots of a function, f(z), of a single complex valued variable, z, are the values of z for which f(z)=0.  Here, you can find the roots of a complex analytic function by:'),
+    	html.P("""
+    		The roots of a function, f(z), of a single complex valued variable, z, are the values 
+    		of z for which f(z)=0.  Here, you can find all the roots of a complex analytic 
+    		function which lie within a given circle.
+    		"""),
     	html.P('1. Type your function f(z) in the box below.'),
     	html.P('2. Type the radius and center of the circle in which you want to locate the roots.'),
     	html.P("3. Press the 'Find the roots' button!"),
