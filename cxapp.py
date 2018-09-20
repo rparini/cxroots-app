@@ -24,7 +24,7 @@ app.layout = html.Div(children=[
     ]),
     html.Div([
     	html.Label('f(z) = ', style={'display': 'inline-block', 'padding':5}),
-    	dcc.Input(id='finput', value='E^(z^2)sin(z)+z', placeholder='E^(z^2)sin(z)+z', type='text', size=100),
+    	dcc.Input(id='finput', value='E^(z^2)sin(z)+z', placeholder='E^(z^2)sin(z)+z', type='text', size=92),
     ], style={'padding':15}),
 
     # dcc.Markdown(''' '''),
@@ -40,12 +40,12 @@ app.layout = html.Div(children=[
     html.Div([
 	    html.Div([
 			html.Label('Circle radius = ', style={'display': 'inline-block', 'padding':5}),
-	    	dcc.Input(id='radius', value=3, min=0, type='number', size=100),
+	    	dcc.Input(id='radius', value=3, min=0, type='number', size=10),
 	    	html.Label('Circle center = ', style={'display': 'inline-block', 'padding':5, 'padding-left': 25}),
 	    	dcc.Input(id='center', value='0', min=0, type='text', size=20),
 	    	html.Div([
     			html.Button('Find the roots', id='button')
-    		], style={'display': 'inline-block', 'padding':5, 'padding-left': 25})
+    		], style={'display': 'inline-block', 'padding':5, 'padding-left': 30})
 	    ], style={'display': 'inline-block', 'padding':1}),
 	], style={'padding':10}),
 
