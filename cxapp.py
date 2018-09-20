@@ -22,6 +22,7 @@ app.layout = html.Div(children=[
     	html.P('2. Type the radius and center of the circle in which you want to locate the roots.'),
     	html.P("3. Press the 'Find the roots' button!"),
     ]),
+
     html.Div([
     	html.Label('f(z) = ', style={'display': 'inline-block', 'padding':5}),
     	dcc.Input(id='finput', value='E^(z^2)sin(z)+z', placeholder='E^(z^2)sin(z)+z', type='text', size=92),
@@ -97,7 +98,7 @@ def update_graph(n_clicks, function_string, circle_radius, circle_center):
 				'y': np.imag(conourVals),
 				'mode': 'lines',
 				'line': {'color':'black', 'dash':'dash'},
-				'name': 'Initial contour',
+				'name': 'Contour bounding sought roots',
 				'hoverinfo': 'skip',
 			}, 
 			{
