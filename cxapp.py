@@ -22,7 +22,6 @@ app.layout = html.Div(children=[
     	dcc.Input(id='finput', value='E^(z^2)sin(z)+z', placeholder='E^(z^2)sin(z)+z', type='text', size=100),
     ]),
 
-    html.Div([
     # dcc.Markdown(''' '''),
     # dcc.Dropdown(id='contour', options=[
 	   #      {'label': 'Circle', 'value': 'Circle'},
@@ -32,9 +31,14 @@ app.layout = html.Div(children=[
 	   #  ], value="AnnulusSector"),
 	# html.Label('Circle center:'),
  #    dcc.Input(id='center', value=1.0, min=0, type='number', size=100),
-
-	html.Label('Circle radius, R = '),
+    html.Div([
+	html.Label('Circle radius = '),
     dcc.Input(id='radius', value=3, min=0, type='number', size=100),
+    ]),
+
+    html.Div([
+    html.Label('Circle center = '),
+    dcc.Input(id='center', value=0, min=0, type='number', size=100),
     ]),
 
     html.Div([
@@ -55,8 +59,11 @@ def hovertext(result):
 @app.callback(
     dash.dependencies.Output('rootplot', 'figure'),
     [dash.dependencies.Input('button', 'n_clicks')],
-    [dash.dependencies.State('finput', 'value'), dash.dependencies.State('radius', 'value')])
-def update_graph(n_clicks, function_string, circle_radius):
+    [dash.dependencies.State('finput', 'value'), 
+     dash.dependencies.State('radius', 'value'),
+     dash.dependencies.State('center', 'value')
+    ])
+def update_graph(n_clicks, function_string, circle_radius, circle_center):
 	# Parse the input function string into a sympy expression and compute derivatives
 	transformations = standard_transformations + (
 		implicit_multiplication_application,
@@ -70,7 +77,7 @@ def update_graph(n_clicks, function_string, circle_radius):
 	df = lambdify('z', deq, modules='numpy')
 
 	# find the roots
-	C = cxroots.Circle(0, float(circle_radius))
+	C = cxroots.Circle(float(circle_center), float(circle_radius))
 	rootResult = C.roots(f, df)
 
 	# get values to plot the contour
