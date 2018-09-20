@@ -42,7 +42,7 @@ app.layout = html.Div(children=[
 			html.Label('Circle radius = ', style={'display': 'inline-block', 'padding':5}),
 	    	dcc.Input(id='radius', value=3, min=0, type='number', size=100),
 	    	html.Label('Circle center = ', style={'display': 'inline-block', 'padding':5, 'padding-left': 25}),
-	    	dcc.Input(id='center', value=0, min=0, type='number', size=100),
+	    	dcc.Input(id='center', value='0', min=0, type='text', size=20),
 	    	html.Div([
     			html.Button('Find the roots', id='button')
     		], style={'display': 'inline-block', 'padding':5, 'padding-left': 25})
@@ -83,7 +83,8 @@ def update_graph(n_clicks, function_string, circle_radius, circle_center):
 	df = lambdify('z', deq, modules='numpy')
 
 	# find the roots
-	C = cxroots.Circle(float(circle_center), float(circle_radius))
+	circle_center = complex(parse_expr(circle_center, transformations=standard_transformations))
+	C = cxroots.Circle(circle_center, float(circle_radius))
 	rootResult = C.roots(f, df)
 
 	# get values to plot the contour
