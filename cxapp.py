@@ -17,16 +17,15 @@ server = app.server
 app.layout = html.Div(children=[
     html.H1(children='Rootfinder for complex analytic functions', style={'textAlign':'center'}),
     html.Div([
-    	html.P('The roots of a function, f(z), of a single complex valued variable, z, are the values of z for which f(z)=0.'),
-    	html.P('To find these roots for a complex analytic function, f(z):'),
-    	html.P('1. Type your function f(z) in the box to the right.'),
+    	html.P('The roots of a function, f(z), of a single complex valued variable, z, are the values of z for which f(z)=0.  Here, you can find the roots of a complex analytic function by:'),
+    	html.P('1. Type your function f(z) in the box below.'),
     	html.P('2. Type the radius and center of the circle in which you want to locate the roots.'),
     	html.P("3. Press the 'Find the roots' button!"),
     ]),
     html.Div([
-    	html.Label('f(z) = '),
+    	html.Label('f(z) = ', style={'display': 'inline-block', 'padding':5}),
     	dcc.Input(id='finput', value='E^(z^2)sin(z)+z', placeholder='E^(z^2)sin(z)+z', type='text', size=100),
-    ]),
+    ], style={'padding':15}),
 
     # dcc.Markdown(''' '''),
     # dcc.Dropdown(id='contour', options=[
@@ -37,19 +36,19 @@ app.layout = html.Div(children=[
 	   #  ], value="AnnulusSector"),
 	# html.Label('Circle center:'),
  #    dcc.Input(id='center', value=1.0, min=0, type='number', size=100),
-    html.Div([
-	html.Label('Circle radius = '),
-    dcc.Input(id='radius', value=3, min=0, type='number', size=100),
-    ]),
 
     html.Div([
-    html.Label('Circle center = '),
-    dcc.Input(id='center', value=0, min=0, type='number', size=100),
-    ]),
+	    html.Div([
+			html.Label('Circle radius = ', style={'display': 'inline-block', 'padding':5}),
+	    	dcc.Input(id='radius', value=3, min=0, type='number', size=100),
+	    	html.Label('Circle center = ', style={'display': 'inline-block', 'padding':5, 'padding-left': 25}),
+	    	dcc.Input(id='center', value=0, min=0, type='number', size=100),
+	    	html.Div([
+    			html.Button('Find the roots', id='button')
+    		], style={'display': 'inline-block', 'padding':5, 'padding-left': 25})
+	    ], style={'display': 'inline-block', 'padding':1}),
+	], style={'padding':10}),
 
-    html.Div([
-    	html.Button('Find the roots', id='button'),
-    ]),
 
     dcc.Graph(
         id='rootplot',
@@ -119,6 +118,9 @@ def update_graph(n_clicks, function_string, circle_radius, circle_center):
 	}
 
 	return figure
+
+# Use plotly's css style sheet
+app.css.append_css({'external_url': 'https://codepen.io/chriddyp/pen/bWLwgP.css'})
 
 if __name__ == '__main__':
     app.run_server(debug=True)
