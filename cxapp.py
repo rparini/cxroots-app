@@ -15,8 +15,14 @@ app = dash.Dash()
 server = app.server
 
 app.layout = html.Div(children=[
-    html.H1(children='cxroots online'),
-    html.Div(children='''Find the roots of a complex analytic function within a circle of given radius R'''),
+    html.H1(children='Rootfinder for complex analytic functions', style={'textAlign':'center'}),
+    html.Div([
+    	html.P('The roots of a function, f(z), of a single complex valued variable, z, are the values of z for which f(z)=0.'),
+    	html.P('To find these roots for a complex analytic function, f(z):'),
+    	html.P('1. Type your function f(z) in the box to the right.'),
+    	html.P('2. Type the radius and center of the circle in which you want to locate the roots.'),
+    	html.P("3. Press the 'Find the roots' button!"),
+    ]),
     html.Div([
     	html.Label('f(z) = '),
     	dcc.Input(id='finput', value='E^(z^2)sin(z)+z', placeholder='E^(z^2)sin(z)+z', type='text', size=100),
@@ -47,10 +53,11 @@ app.layout = html.Div(children=[
 
     dcc.Graph(
         id='rootplot',
-        figure={}
+        figure={},
+        style = {'textAlign':'center'}
     ),
 
-], style = {'textAlign':'center'})
+])
 
 def hovertext(result):
 	root, multiplicity = result
