@@ -29,7 +29,7 @@ app.layout = html.Div(children=[
 
     html.Div([
     	html.Label('f(z) = ', style={'display': 'inline-block', 'padding':5}),
-    	dcc.Input(id='finput', value='E^(z^2)sin(z)+z', placeholder='E^(z^2)sin(z)+z', type='text', size=92),
+    	dcc.Input(id='finput', value='sin(z)+I', placeholder='sin(z)+I', type='text', size=92),
     ], style={'padding':15}),
 
     # dcc.Markdown(''' '''),
