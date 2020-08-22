@@ -9,5 +9,5 @@ npm run build
 
 To view run
 ```
-open dist/index.html
+npm start
 ```

@@ -30,7 +30,7 @@
     "awesome-typescript-loader": "^5.2.1",
     "copy-webpack-plugin": "^6.0.3",
     "encodings": "^1.0.0",
-    "file-loader": "^6.0.0",
+    "file-loader": "4.3.0",
     "mathjax": "^3.0.5",
     "pyodide": "^0.1.1",
     "source-map-loader": "^1.0.1",
