@@ -54,6 +54,11 @@ module.exports = {
         patterns: [
           {from: './src/index.html', to: path.resolve(__dirname, 'dist')}
         ]
+      }),
+      new CopyPlugin({
+        patterns: [
+          {from: './src/pyodide.js', to: path.resolve(__dirname, 'dist')}
+        ]
       })
     ]
   };
