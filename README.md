@@ -2,12 +2,8 @@
 A web application demonstrating some of the features of [cxroots](https://github.com/rparini/cxroots).
 
 # Development
-To build run 
 ```
 npm run build
-```
-
-To view run
-```
-npm start
+npm start --watch
+open localhost:8080
 ```
