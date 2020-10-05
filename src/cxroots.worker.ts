@@ -16,6 +16,7 @@ import micropip
 def do_work(*args):
     import cxroots
     print('Imported cxroots')
+    return 42
 micropip.install([
     'https://files.pythonhosted.org/packages/62/2a/31e70724b12d7ddf776960c219219f5035f2cf21e2f3e132f584b513e200/cxroots-1.1.10-py3-none-any.whl',
     'https://files.pythonhosted.org/packages/ab/c0/b0d967160ecc8db52ae34e063937d85e8d386f140ad4826aae2086245a5e/numdifftools-0.9.39-py2.py3-none-any.whl',
@@ -26,11 +27,11 @@ micropip.install([
 async function runCxroots(): Promise<any> {
     await languagePluginLoader;
     await pyodide.loadPackage(['micropip', 'numpy', 'scipy']);
-    pyodide.runPython(pythonCode)
+    return pyodide.runPython(pythonCode);
 }
 
 addEventListener('message', async (message) => {
     console.log('in webworker', message);
-    await runCxroots()
-    postMessage('this is the response ' + message.data);
+    var result = await runCxroots();
+    postMessage('this is the response ' + message.data + ' result: ' + result);
 });
