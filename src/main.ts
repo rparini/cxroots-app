@@ -10,5 +10,10 @@ worker.addEventListener('message', message => {
     console.log(message);
 });
 console.log('sending message to worker');
-worker.postMessage('this is a test message to the worker');
+
+
+const rootreq = {
+    f: '2',
+}
+worker.postMessage(rootreq);
 
