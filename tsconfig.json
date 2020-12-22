@@ -10,7 +10,5 @@
     "target": "es6",
     "lib": ["webworker","es6","scripthost","dom"]
   },
-  "include": [
-    "src"
-  ],
+  "include": ["src"],
 }
