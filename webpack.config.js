@@ -52,7 +52,7 @@ module.exports = {
     plugins: [
       new CopyPlugin({
         patterns: [
-          {from: './src/index.html', to: path.resolve(__dirname, 'dist')}
+          {from: './public/index.html', to: path.resolve(__dirname, 'dist')}
         ]
       }),
       new CopyPlugin({
