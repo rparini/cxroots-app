@@ -1,8 +1,12 @@
 const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-    entry: './src/main.ts',
+    entry: './src/index.tsx',
+    target: "web",
+    mode: "development",  
     devtool: 'inline-source-map',
     devServer: {
       contentBase: './dist',
@@ -11,17 +15,16 @@ module.exports = {
       rules: [
         {
             enforce: 'pre',
-            test: /\.js$/,
+            test: /\.(js|ts)$/,
             use: "source-map-loader"
         },
         {
-            enforce: 'pre',
-            test: /\.ts?$/,
-            use: "source-map-loader"
-        },
+          test: /\.css$/,
+          loader: "css-loader",
+        },  
         {
             // For our normal typescript
-            test: /\.ts?$/,
+            test: /\.(ts|tsx)$/,
             use: [
                 {
                     loader: 'awesome-typescript-loader',
@@ -39,10 +42,7 @@ module.exports = {
         'src',
         'node_modules'
       ],
-      extensions: [
-          '.js',
-          '.ts'
-      ]
+      extensions: [".js", ".jsx", ".json", ".ts", ".tsx"],
     },
     output: {
       filename: 'bundle.js',
@@ -50,11 +50,17 @@ module.exports = {
       publicPath: "dist/"
     },
     plugins: [
-      new CopyPlugin({
-        patterns: [
-          {from: './public/index.html', to: path.resolve(__dirname, 'dist')}
-        ]
+      new HtmlWebpackPlugin({
+        template: path.resolve(__dirname, "public", "index.html"),
       }),
+      // new MiniCssExtractPlugin({
+      //   filename: "./src/yourfile.css",
+      // }),
+      // new CopyPlugin({
+      //   patterns: [
+      //     {from: './public/index.html', to: path.resolve(__dirname, 'dist')}
+      //   ]
+      // }),
       new CopyPlugin({
         patterns: [
           {from: './src/pyodide.js', to: path.resolve(__dirname, 'dist')}

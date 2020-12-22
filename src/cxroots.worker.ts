@@ -16,6 +16,7 @@ import micropip
 from js import f
 
 def do_work(*args):
+    print('doing work')
     import cxroots
     print('Imported cxroots')
     return f # This gets returned by pyodide.runPython
