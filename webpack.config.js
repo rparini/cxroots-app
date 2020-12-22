@@ -56,11 +56,6 @@ module.exports = {
       // new MiniCssExtractPlugin({
       //   filename: "./src/yourfile.css",
       // }),
-      // new CopyPlugin({
-      //   patterns: [
-      //     {from: './public/index.html', to: path.resolve(__dirname, 'dist')}
-      //   ]
-      // }),
       new CopyPlugin({
         patterns: [
           {from: './src/pyodide.js', to: path.resolve(__dirname, 'dist')}
