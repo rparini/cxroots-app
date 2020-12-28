@@ -1,6 +1,6 @@
 
 console.log('Loading pyodide')
-importScripts("pyodide.js");
+importScripts("pyodide.js")
 console.log('Loaded pyodide')
 
 declare var languagePluginLoader: Promise<any>;
@@ -9,7 +9,7 @@ declare var pyodide: {
     runPythonAsync(python: string): Promise<string>;
     pyimport<T>(variableName: string): T;
     loadPackage(package: string | string[]): Promise<void>;
-};
+}
 
 const pythonCode = `
 import micropip
@@ -18,7 +18,7 @@ from js import f
 def do_work(*args):
     print('doing work')
     import cxroots
-    print('Imported cxroots')
+    print('finished imports')
     return f # This gets returned by pyodide.runPython
 micropip.install([
     'https://files.pythonhosted.org/packages/62/2a/31e70724b12d7ddf776960c219219f5035f2cf21e2f3e132f584b513e200/cxroots-1.1.10-py3-none-any.whl',
@@ -28,8 +28,8 @@ micropip.install([
 `
 
 async function runCxroots(message): Promise<any> {
-    await languagePluginLoader;
-    await pyodide.loadPackage(['micropip', 'numpy', 'scipy']);
+    await languagePluginLoader
+    await pyodide.loadPackage(['micropip', 'numpy', 'scipy'])
 
     const data = message.data;
     console.log(data)
@@ -43,7 +43,8 @@ async function runCxroots(message): Promise<any> {
 }
 
 addEventListener('message', async (message) => {
-    console.log('in webworker', message);
-    var result = await runCxroots(message);
-    postMessage('this is the response: ' + result);
-});
+    console.log('message send to worker:' + message)
+    var result = await runCxroots(message)
+    // send message back to the main thread
+    postMessage('this is the response: ' + result)
+})
