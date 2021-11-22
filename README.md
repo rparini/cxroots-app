@@ -17,5 +17,5 @@ Used https://github.com/xhlulu/react-pyodide-template as an original JS template
 
 ## TODO
 
-- Convert to TS
+- Convert to TS: https://github.com/pyodide/pyodide/issues/552#issuecomment-781770000
 - Add python script back in 
