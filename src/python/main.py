@@ -13,8 +13,8 @@ import cxroots
 from js import cxroots_args
 
 
-def cxroots_args(foo):
+def run_cxroots(foo):
     return foo
 
 
-cxroots_args(**cxroots_args)
+run_cxroots(**cxroots_args.to_py())
