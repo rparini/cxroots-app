@@ -17,5 +17,5 @@ Used https://github.com/xhlulu/react-pyodide-template as an original JS template
 
 ## TODO
 
+- Pass a user-given string to python code
 - Convert to TS: https://github.com/pyodide/pyodide/issues/552#issuecomment-781770000
-- Add python script back in 

@@ -7,7 +7,12 @@ const runScript = async (code) => {
   const pyodide = await window.loadPyodide({
     indexURL : "https://cdn.jsdelivr.net/pyodide/v0.18.1/full/"
   });
+  // Packages in https://github.com/pyodide/pyodide/tree/main/packages
+  await pyodide.loadPackage(["micropip", "numpy", "scipy"])
 
+  // Set keys on self, so that `from js import key` works.
+  window.self['cxroots_args']={foo: "bar"}
+  
   return await pyodide.runPythonAsync(code);
 }
 
