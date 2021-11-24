@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import script from "./python/main.py";
 import logo from "./logo.svg";
 import "./App.css";
@@ -20,10 +20,13 @@ const runCxroots = async (python_args) => {
 
 const App = () => {
   const [output, setOutput] = useState("(Click the button!)");
+  const [functionText, setFunctionText] = useState("");
 
-  const getOutput = async (python_args) => {
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    console.log(functionText);
     setOutput("(Loading ... )");
-    const out = await runCxroots(python_args);
+    const out = await runCxroots({ foo: functionText });
     setOutput(out);
   };
 
@@ -31,8 +34,18 @@ const App = () => {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <button onClick={() => getOutput({ foo: "bar" })}>Click this</button>
-        <p>5 + 7 = {output}</p>
+        <form onSubmit={handleSubmit}>
+          <label>
+            Name:
+            <input
+              type="text"
+              onChange={(event) => setFunctionText(event.target.value)}
+            />
+          </label>
+          <input type="submit" value="Submit" />
+        </form>
+        <p>f(x)={functionText}</p>
+        <p>Result = {output}</p>
       </header>
     </div>
   );
