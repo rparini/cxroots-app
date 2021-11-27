@@ -1,7 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
+import "katex/dist/katex.min.css";
+import TeX from "@matejmazur/react-katex";
 import script from "./python/main.py";
 import logo from "./logo.svg";
 import "./App.css";
+
+var nerdamer = require("nerdamer");
 
 const runCxroots = async (python_args) => {
   const scriptText = await (await fetch(script)).text();
@@ -21,6 +25,14 @@ const runCxroots = async (python_args) => {
 const App = () => {
   const [output, setOutput] = useState("(Click the button!)");
   const [functionText, setFunctionText] = useState("");
+  const [functionLaTeX, setFunctionLaTeX] = useState("f(z)=");
+
+  useEffect(() => {
+    console.log(functionText);
+    const latex = nerdamer.convertToLaTeX("f(z)=" + functionText);
+    console.log(latex);
+    setFunctionLaTeX(latex);
+  });
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -36,7 +48,7 @@ const App = () => {
         <img src={logo} className="App-logo" alt="logo" />
         <form onSubmit={handleSubmit}>
           <label>
-            Name:
+            <TeX math="f(z)= " />
             <input
               type="text"
               onChange={(event) => setFunctionText(event.target.value)}
@@ -44,7 +56,8 @@ const App = () => {
           </label>
           <input type="submit" value="Submit" />
         </form>
-        <p>f(x)={functionText}</p>
+        <p>{functionLaTeX} </p>
+        <TeX math={functionLaTeX} block />
         <p>Result = {output}</p>
       </header>
     </div>
