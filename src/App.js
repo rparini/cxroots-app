@@ -29,7 +29,7 @@ const App = () => {
 
   useEffect(() => {
     console.log(functionText);
-    const latex = nerdamer.convertToLaTeX("f(z)=" + functionText);
+    const latex = "f(z)=" + nerdamer.convertToLaTeX(functionText);
     console.log(latex);
     setFunctionLaTeX(latex);
   });
