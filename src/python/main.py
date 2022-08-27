@@ -1,5 +1,6 @@
 import micropip
 
+
 # Think this gets redownloaded every time this script is run
 await micropip.install(
     [
@@ -9,12 +10,48 @@ await micropip.install(
     ]
 )
 
-import cxroots
 from js import cxroots_args
+from sympy import diff, lambdify
+from sympy.parsing.sympy_parser import (
+    parse_expr,
+    standard_transformations,
+    implicit_multiplication_application,
+    convert_xor,
+)
+
+import cxroots
 
 
-def run_cxroots(foo):
-    return foo
+def run_cxroots(function_string, circle_center, circle_radius):
+    print("function_string", function_string)
+    print("circle_center", circle_center)
+    print("circle_radius", circle_radius)
+
+    # Parse the input function string into a sympy expression and compute derivatives
+    transformations = standard_transformations + (
+        implicit_multiplication_application,
+        convert_xor,
+    )
+    eq = parse_expr(function_string, transformations=transformations)
+    deq = diff(eq, "z")
+
+    # convert sympy equations into python functions
+    f = lambdify("z", eq, modules="numpy")
+    df = lambdify("z", deq, modules="numpy")
+
+    # find the roots
+    circle_center = complex(
+        parse_expr(str(circle_center), transformations=standard_transformations)
+    )
+    C = cxroots.Circle(circle_center, float(circle_radius))
+    root_result = C.roots(f, df, intMethod="romb")
+
+    print("roots", root_result.roots)
+    print("multiplicities", root_result.multiplicities)
+
+    roots = {"roots": root_result.roots, "multiplicities": root_result.multiplicities}
+
+    return roots
 
 
 run_cxroots(**cxroots_args.to_py())

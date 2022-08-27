@@ -14,7 +14,7 @@ const runCxroots = async (python_args) => {
     indexURL: "https://cdn.jsdelivr.net/pyodide/v0.18.1/full/",
   });
   // Packages in https://github.com/pyodide/pyodide/tree/main/packages
-  await pyodide.loadPackage(["micropip", "numpy", "scipy"]);
+  await pyodide.loadPackage(["micropip", "numpy", "scipy", "sympy"]);
 
   // Set keys on self, so that `from js import key` works.
   window.self["cxroots_args"] = python_args;
@@ -29,7 +29,12 @@ const App = () => {
 
   useEffect(() => {
     console.log(functionText);
-    const latex = "f(z)=" + nerdamer.convertToLaTeX(functionText);
+    var latex = "f(z)=";
+    try {
+      latex = "f(z)=" + nerdamer.convertToLaTeX(functionText);
+    } catch (error) {
+      latex = "\\text{Unable to parse}";
+    }
     console.log(latex);
     setFunctionLaTeX(latex);
   });
@@ -38,8 +43,17 @@ const App = () => {
     event.preventDefault();
     console.log(functionText);
     setOutput("(Loading ... )");
-    const out = await runCxroots({ foo: functionText });
-    setOutput(out);
+    const result = await runCxroots({
+      function_string: functionText,
+      circle_center: 0,
+      circle_radius: 2,
+    });
+
+    console.log("result");
+    console.log(result.get("roots"));
+    console.log(result.get("multiplicities"));
+
+    setOutput("got the result");
   };
 
   return (
@@ -56,7 +70,6 @@ const App = () => {
           </label>
           <input type="submit" value="Submit" />
         </form>
-        <p>{functionLaTeX} </p>
         <TeX math={functionLaTeX} block />
         <p>Result = {output}</p>
       </header>
