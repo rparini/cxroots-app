@@ -35,9 +35,9 @@ const App = () => {
     } catch (error) {
       latex = "\\text{Unable to parse}";
     }
-    console.log(latex);
+    console.log('latex f:', latex);
     setFunctionLaTeX(latex);
-  });
+  }, [functionText]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
