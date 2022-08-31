@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import "katex/dist/katex.min.css";
 import TeX from "@matejmazur/react-katex";
 import script from "./python/main.py";
