@@ -4,6 +4,11 @@ import TeX from "@matejmazur/react-katex";
 import script from "./python/main.py";
 import logo from "./logo.svg";
 import "./App.css";
+import { CxPlot } from './CxPlot.js';
+import { create, all } from 'mathjs'
+
+const config = { }
+const math = create(all, config)
 
 var nerdamer = require("nerdamer");
 
@@ -22,10 +27,12 @@ const runCxroots = async (python_args) => {
   return await pyodide.runPythonAsync(scriptText);
 };
 
+
+
 const App = () => {
-  const [output, setOutput] = useState("(Click the button!)");
   const [functionText, setFunctionText] = useState("");
   const [functionLaTeX, setFunctionLaTeX] = useState("f(z)=");
+  const [rootResult, setRootResult] = useState({"roots": [], "multiplicities": []})
 
   useEffect(() => {
     console.log(functionText);
@@ -41,20 +48,23 @@ const App = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(functionText);
-    setOutput("(Loading ... )");
     const result = await runCxroots({
       function_string: functionText,
       circle_center: 0,
       circle_radius: 2,
     });
 
-    console.log("result");
-    console.log(result.get("roots"));
-    console.log(result.get("multiplicities"));
-
-    setOutput("got the result");
+    console.log("result", result);
+    var roots = result.get('roots');
+    var multiplicities = result.get('multiplicities');
+    multiplicities = multiplicities.toJs()
+    // .toJs does not automatically work for complex numbers so workaround
+    roots = roots.toJs({depth : 1}).map(z => z.toString())
+    roots = roots.map(z => z.replace('j','i'))
+    roots = roots.map(z => math.complex(z))
+    setRootResult({"roots": roots, "multiplicities": multiplicities})
   };
+
 
   return (
     <div className="App">
@@ -71,7 +81,7 @@ const App = () => {
           <input type="submit" value="Submit" />
         </form>
         <TeX math={functionLaTeX} block />
-        <p>Result = {output}</p>
+        <CxPlot roots={rootResult.roots} multiplicities={rootResult.multiplicities} />
       </header>
     </div>
   );

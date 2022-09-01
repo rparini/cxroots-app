@@ -46,8 +46,8 @@ def run_cxroots(function_string, circle_center, circle_radius):
     C = cxroots.Circle(circle_center, float(circle_radius))
     root_result = C.roots(f, df, intMethod="romb")
 
-    print("roots", root_result.roots)
-    print("multiplicities", root_result.multiplicities)
+    print("py roots", root_result.roots)
+    print("py multiplicities", root_result.multiplicities)
 
     roots = {"roots": root_result.roots, "multiplicities": root_result.multiplicities}
 
