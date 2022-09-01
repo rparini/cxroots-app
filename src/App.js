@@ -10,7 +10,7 @@ import { create, all } from 'mathjs'
 const config = { }
 const math = create(all, config)
 
-var nerdamer = require("nerdamer");
+const nerdamer = require("nerdamer");
 
 const runCxroots = async (python_args) => {
   const scriptText = await (await fetch(script)).text();
@@ -27,19 +27,16 @@ const runCxroots = async (python_args) => {
   return await pyodide.runPythonAsync(scriptText);
 };
 
-
-
 const App = () => {
   const [functionText, setFunctionText] = useState("");
   const [functionLaTeX, setFunctionLaTeX] = useState("f(z)=");
   const [rootResult, setRootResult] = useState({"roots": [], "multiplicities": []})
-  const [contour, setContour] = useState({type: 'circle', center: 0, radius: 2})
+  const [previewContour, setPreviewContour] = useState({type: 'circle', center: 0, radius: 2})
 
   useEffect(() => {
-    console.log(functionText);
-    var latex = "f(z)=";
+    let latex = "";
     try {
-      latex = "f(z)=" + nerdamer.convertToLaTeX(functionText);
+      latex = nerdamer.convertToLaTeX(functionText);
     } catch (error) {
       latex = "\\text{Unable to parse}";
     }
@@ -51,19 +48,19 @@ const App = () => {
     event.preventDefault();
     const result = await runCxroots({
       function_string: functionText,
-      circle_center: contour.center,
-      circle_radius: contour.radius,
+      circle_center: previewContour.center,
+      circle_radius: previewContour.radius,
     });
 
     console.log("result", result);
-    var roots = result.get('roots');
-    var multiplicities = result.get('multiplicities');
+    let roots = result.get('roots');
+    let multiplicities = result.get('multiplicities');
     multiplicities = multiplicities.toJs()
     // .toJs does not automatically work for complex numbers so workaround
     roots = roots.toJs({depth : 1}).map(z => z.toString())
     roots = roots.map(z => z.replace('j','i'))
     roots = roots.map(z => math.complex(z))
-    setRootResult({"roots": roots, "multiplicities": multiplicities})
+    setRootResult({"roots": roots, "multiplicities": multiplicities, "contour": previewContour})
   };
 
 
@@ -72,17 +69,42 @@ const App = () => {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <form onSubmit={handleSubmit}>
-          <label>
+          <p><label>
             <TeX math="f(z)= " />
             <input
               type="text"
               onChange={(event) => setFunctionText(event.target.value)}
             />
-          </label>
-          <input type="submit" value="Submit" />
+            <TeX math={'f(z)= '+functionLaTeX} block />
+          </label></p>
+          <p>
+          Circle radius:
+          <input
+            type="number"
+            value={previewContour.radius}
+            onChange={(event) => setPreviewContour({...previewContour, radius: parseFloat(event.target.value)})}
+          />
+          </p>
+          Circle center:
+          <input
+            type="number"
+            value={math.re(previewContour.center)}
+            onChange={(event) => setPreviewContour({...previewContour, center: math.complex(event.target.value, math.im(previewContour.center))})}
+          />
+          +i
+          <input
+            type="number"
+            value={math.im(previewContour.center)}
+            onChange={(event) => setPreviewContour({...previewContour, center: math.complex(math.re(previewContour.center), event.target.value)})}
+          />
+          <p><input type="submit" value="Solve" /></p>
         </form>
-        <TeX math={functionLaTeX} block />
-        <CxPlot roots={rootResult.roots} multiplicities={rootResult.multiplicities} contour={contour}/>
+        <CxPlot
+          roots={rootResult.roots} 
+          multiplicities={rootResult.multiplicities} 
+          contour={rootResult.contour} 
+          previewContour={previewContour}
+        />
       </header>
     </div>
   );
