@@ -18,7 +18,9 @@ Used https://github.com/xhlulu/react-pyodide-template as an original JS template
 
 ## TODO
 
-- Plot contour
+- Update pyodide
+- Update cxroots
+- Error "pyodide is already loading" when trying to run pyodide again
 - Error when entering 2x "Invalid integer: NaN"
 - Raise an error if a variable other than `z` is entered
 - Can latex rerender logic be simplified?
