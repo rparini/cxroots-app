@@ -5,8 +5,9 @@ import { create, all } from 'mathjs'
 const config = { }
 const math = create(all, config)
 
-export function CxPlot({roots, multiplicities}) {
+export function CxPlot({roots, multiplicities, contour}) {
     console.log('multi plot', multiplicities)
+    
     return (
       <Plot
         data={[
@@ -23,7 +24,21 @@ export function CxPlot({roots, multiplicities}) {
             marker: {color: 'black'},
           },
         ]}
-        layout={{autosize: true, title: 'A Fancy Plot'}}
+        layout={{
+          autosize: false, 
+          title: 'A Fancy Plot', 
+          yaxis: {scaleanchor: "x", scaleratio: 1},
+          shapes: [
+            {
+              type: 'circle', 
+              line: {dash: "dash"},
+              x0: math.re(contour.center) - contour.radius, 
+              x1: math.re(contour.center) + contour.radius,
+              y0: math.im(contour.center) - contour.radius,
+              y1: math.im(contour.center) + contour.radius
+            }
+          ]
+        }}
       />
     );
 }

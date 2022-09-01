@@ -33,6 +33,7 @@ const App = () => {
   const [functionText, setFunctionText] = useState("");
   const [functionLaTeX, setFunctionLaTeX] = useState("f(z)=");
   const [rootResult, setRootResult] = useState({"roots": [], "multiplicities": []})
+  const [contour, setContour] = useState({type: 'circle', center: 0, radius: 2})
 
   useEffect(() => {
     console.log(functionText);
@@ -50,8 +51,8 @@ const App = () => {
     event.preventDefault();
     const result = await runCxroots({
       function_string: functionText,
-      circle_center: 0,
-      circle_radius: 2,
+      circle_center: contour.center,
+      circle_radius: contour.radius,
     });
 
     console.log("result", result);
@@ -81,7 +82,7 @@ const App = () => {
           <input type="submit" value="Submit" />
         </form>
         <TeX math={functionLaTeX} block />
-        <CxPlot roots={rootResult.roots} multiplicities={rootResult.multiplicities} />
+        <CxPlot roots={rootResult.roots} multiplicities={rootResult.multiplicities} contour={contour}/>
       </header>
     </div>
   );
