@@ -24,7 +24,7 @@ import cxroots
 
 def run_cxroots(function_string, circle_center, circle_radius):
     print("function_string", function_string)
-    print("circle_center", circle_center)
+    print("circle_center", circle_center, type(circle_center))
     print("circle_radius", circle_radius)
 
     # Parse the input function string into a sympy expression and compute derivatives
@@ -40,9 +40,7 @@ def run_cxroots(function_string, circle_center, circle_radius):
     df = lambdify("z", deq, modules="numpy")
 
     # find the roots
-    circle_center = complex(
-        parse_expr(str(circle_center), transformations=standard_transformations)
-    )
+    circle_center = complex(str(circle_center).replace("i", "j"))
     C = cxroots.Circle(circle_center, float(circle_radius))
     root_result = C.roots(f, df, intMethod="romb")
 
