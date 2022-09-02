@@ -16,7 +16,7 @@ const runCxroots = async (python_args) => {
   const scriptText = await (await fetch(script)).text();
 
   const pyodide = await window.loadPyodide({
-    indexURL: "https://cdn.jsdelivr.net/pyodide/v0.18.1/full/",
+    indexURL: "https://cdn.jsdelivr.net/pyodide/v0.21.2/full/",
   });
   // Packages in https://github.com/pyodide/pyodide/tree/main/packages
   await pyodide.loadPackage(["micropip", "numpy", "scipy", "sympy"]);
