@@ -1,12 +1,13 @@
 import React from 'react';
 import Plot from 'react-plotly.js';
-import { create, all } from 'mathjs'
+import { create, all } from 'mathjs';
 
 const config = { }
 const math = create(all, config)
 
-export function CxPlot({roots, multiplicities, contour, previewContour}) {
+export function CxPlot({functionText, roots, multiplicities, contour, previewContour}) {
     console.log(previewContour)
+    console.log(functionText)
     return (
       <Plot
         data={[
@@ -20,14 +21,14 @@ export function CxPlot({roots, multiplicities, contour, previewContour}) {
             '<br>Multiplicity: %{text}' + 
             // The <extra></extra> removes the "trace 0" from appearing on hoverover
             '<extra></extra>',
-            marker: {color: 'black'},
+            marker: {color: 'blue'},
           },
         ]}
         layout={{
           autosize: true, 
-          title: 'A Fancy Plot', 
-          xaxis: {scaleanchor: "y", scaleratio: 1},
-          yaxis: {scaleratio: 1},
+          title: functionText === undefined ? '' : '$\\text{Roots of }' + functionText + '$', 
+          xaxis: {scaleanchor: "y", scaleratio: 1, title:{text:'$\\text{Re}[z]$'}},
+          yaxis: {scaleratio: 1, title:{text:'$\\text{Im}[z]$'}},
           shapes: [
             contour === undefined ? undefined : {
               type: 'circle', 

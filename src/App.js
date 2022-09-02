@@ -60,7 +60,12 @@ const App = () => {
     roots = roots.toJs({depth : 1}).map(z => z.toString())
     roots = roots.map(z => z.replace('j','i'))
     roots = roots.map(z => math.complex(z))
-    setRootResult({"roots": roots, "multiplicities": multiplicities, "contour": previewContour})
+    setRootResult({
+      "functionText": functionLaTeX, 
+      "roots": roots, 
+      "multiplicities": multiplicities, 
+      "contour": previewContour
+    })
   };
 
 
@@ -100,6 +105,7 @@ const App = () => {
           <p><input type="submit" value="Solve" /></p>
         </form>
         <CxPlot
+          functionText={rootResult.functionText}
           roots={rootResult.roots} 
           multiplicities={rootResult.multiplicities} 
           contour={rootResult.contour} 
