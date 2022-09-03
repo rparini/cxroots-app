@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import "katex/dist/katex.min.css";
 import TeX from "@matejmazur/react-katex";
 import script from "./python/main.py";
-import logo from "./logo.svg";
 import "./App.css";
 import { CxPlot } from './CxPlot.js';
 import { create, all } from 'mathjs'
@@ -72,7 +71,7 @@ const App = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        cxroots: A rootfinder for complex analytic functions
         <form onSubmit={handleSubmit}>
           <p><label>
             <TeX math="f(z)= " />
