@@ -18,7 +18,6 @@ Used https://github.com/xhlulu/react-pyodide-template as an original JS template
 
 ## TODO
 
-- Update cxroots
 - Add some kind of "loading" indicator
 - Error "pyodide is already loading" when trying to run pyodide again
 - Error when entering 2x "Invalid integer: NaN"
