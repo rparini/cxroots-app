@@ -5,6 +5,7 @@ import script from "./python/main.py";
 import "./App.css";
 import { CxPlot } from './CxPlot.js';
 import { create, all } from 'mathjs'
+import {Button, TextField} from '@mui/material';
 
 const config = { }
 const math = create(all, config)
@@ -26,6 +27,18 @@ const runCxroots = async (python_args) => {
   return await pyodide.runPythonAsync(scriptText);
 };
 
+const ParseLatex=(text) => {
+const regExp = /[a-yA-Z]/g;
+if (regExp.test(text)) {
+  return undefined
+}
+try {
+  return nerdamer.convertToLaTeX(text);
+} catch (error) {
+  return undefined;
+}
+}
+
 const App = () => {
   const [functionText, setFunctionText] = useState("");
   const [functionLaTeX, setFunctionLaTeX] = useState("f(z)=");
@@ -33,13 +46,7 @@ const App = () => {
   const [previewContour, setPreviewContour] = useState({type: 'circle', center: 0, radius: 2})
 
   useEffect(() => {
-    let latex = "";
-    try {
-      latex = nerdamer.convertToLaTeX(functionText);
-    } catch (error) {
-      latex = "\\text{Unable to parse}";
-    }
-    console.log('latex f:', latex);
+    const latex = ParseLatex(functionText)
     setFunctionLaTeX(latex);
   }, [functionText]);
 
@@ -70,39 +77,40 @@ const App = () => {
 
   return (
     <div className="App">
-      <header className="App-header">
+      <header>
         cxroots: A rootfinder for complex analytic functions
-        <form onSubmit={handleSubmit}>
-          <p><label>
-            <TeX math="f(z)= " />
-            <input
-              type="text"
-              onChange={(event) => setFunctionText(event.target.value)}
-            />
-            <TeX math={'f(z)= '+functionLaTeX} block />
-          </label></p>
-          <p>
-          Circle radius:
-          <input
-            type="number"
-            value={previewContour.radius}
-            onChange={(event) => setPreviewContour({...previewContour, radius: parseFloat(event.target.value)})}
+        <br></br><br></br>
+        <label>
+          <TextField
+            error={functionLaTeX===undefined}
+            helperText={functionLaTeX===undefined ? "Unable to parse":undefined}
+            variant="outlined"
+            label={functionLaTeX===undefined || functionLaTeX=='' ? <TeX math={'f(z)'} /> :  <TeX math={'f(z)='+functionLaTeX} />}
+            type='text'
+            onChange={(event) => setFunctionText(event.target.value)}
           />
-          </p>
-          Circle center:
-          <input
-            type="number"
-            value={math.re(previewContour.center)}
-            onChange={(event) => setPreviewContour({...previewContour, center: math.complex(event.target.value, math.im(previewContour.center))})}
-          />
-          +i
-          <input
-            type="number"
-            value={math.im(previewContour.center)}
-            onChange={(event) => setPreviewContour({...previewContour, center: math.complex(math.re(previewContour.center), event.target.value)})}
-          />
-          <p><input type="submit" value="Solve" /></p>
-        </form>
+          <Button disabled={functionLaTeX===undefined || functionLaTeX==''} variant="contained" onClick={handleSubmit}>Find the Roots</Button>
+        </label>
+        Find all the roots within a 
+        circle
+        of radius:
+        <input
+          type="number"
+          value={previewContour.radius}
+          onChange={(event) => setPreviewContour({...previewContour, radius: parseFloat(event.target.value)})}
+        />
+        and center:
+        <input
+          type="number"
+          value={math.re(previewContour.center)}
+          onChange={(event) => setPreviewContour({...previewContour, center: math.complex(event.target.value, math.im(previewContour.center))})}
+        />
+        +i
+        <input
+          type="number"
+          value={math.im(previewContour.center)}
+          onChange={(event) => setPreviewContour({...previewContour, center: math.complex(math.re(previewContour.center), event.target.value)})}
+        />
         <CxPlot
           functionText={rootResult.functionText}
           roots={rootResult.roots} 

@@ -20,8 +20,6 @@ Used https://github.com/xhlulu/react-pyodide-template as an original JS template
 
 - Add some kind of "loading" indicator
 - Error "pyodide is already loading" when trying to run pyodide again
-- Error when entering 2x "Invalid integer: NaN"
-- Raise an error if a variable other than `z` is entered
 - Can latex rerender logic be simplified?
 - Firefox out of memory error after running pyodide a few times: https://github.com/pyodide/pyodide/issues/1333
 - Convert to TS: https://github.com/pyodide/pyodide/issues/552#issuecomment-781770000
