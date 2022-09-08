@@ -80,7 +80,11 @@ const App = () => {
         <h1>cxroots: A rootfinder for complex analytic functions</h1>
         <Grid container padding={5} spacing={2}>
           <Grid item xs={12}>
-            Find all the roots of the complex analytic function <TeX math={'f(z)'}/>:
+            {/* The roots of a function, <TeX math={'f(z)'}/>, of a single complex valued variable, <TeX math={'z'}/>, are the values of <TeX math={'z'}/> for which <TeX math={'f(z)=0'}/>.  */}
+            Find all the roots of a function <TeX math={'f(z)'}/> within a given circle in the complex plane.
+          </Grid>
+          <Grid item xs={12}>
+            <TeX math={'f(z)'}/> must have no roots or poles on the circle and must be analytic within the circle
           </Grid>
           <Grid item xs={12}>
             <TextField
@@ -90,11 +94,12 @@ const App = () => {
               variant="outlined"
               label={functionLaTeX===undefined || functionLaTeX==='' ? <TeX math={'f(z)'} /> :  <TeX math={'f(z)='+functionLaTeX} />}
               type='text'
+              value={functionText}
               onChange={(event) => setFunctionText(event.target.value)}
             />
           </Grid>
           <Grid item xs={12}>
-            within the circle:
+            Define the circle to find the roots in:
           </Grid>
           <Grid item xs={4}>
             <TextField
@@ -123,8 +128,10 @@ const App = () => {
               onChange={(event) => setPreviewContour({...previewContour, center: math.complex(math.re(previewContour.center), event.target.value)})}
             />
           </Grid>
+          <Grid item xs={12}>
+            <Button disabled={functionLaTeX===undefined || functionLaTeX===''} variant="contained" onClick={handleSubmit}>Find the Roots</Button>
+          </Grid>
         </Grid>
-        <Button disabled={functionLaTeX===undefined || functionLaTeX===''} variant="contained" onClick={handleSubmit}>Find the Roots</Button>
         <CxPlot
           functionText={rootResult.functionText}
           roots={rootResult.roots} 
