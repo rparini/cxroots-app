@@ -28,10 +28,11 @@ const runCxroots = async (python_args) => {
 };
 
 const ParseLatex=(text) => {
-const regExp = /[a-yA-Z]/g;
-if (regExp.test(text)) {
-  return undefined
-}
+// This approach excludes sin/cos/exp/log/i
+// const regExp = /[a-yA-Z]/g;
+// if (regExp.test(text)) {
+//   return undefined
+// }
 try {
   return nerdamer.convertToLaTeX(text);
 } catch (error) {
