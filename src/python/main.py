@@ -23,16 +23,13 @@ import cxroots
 
 
 def run_cxroots(function_string, circle_center, circle_radius):
-    print("function_string", function_string)
-    print("circle_center", circle_center, type(circle_center))
-    print("circle_radius", circle_radius)
-
     # Parse the input function string into a sympy expression and compute derivatives
     transformations = standard_transformations + (
         implicit_multiplication_application,
         convert_xor,
     )
     eq = parse_expr(function_string, transformations=transformations)
+    eq = eq.subs("i", 1j)
     deq = diff(eq, "z")
 
     # convert sympy equations into python functions
@@ -43,13 +40,7 @@ def run_cxroots(function_string, circle_center, circle_radius):
     circle_center = complex(str(circle_center).replace("i", "j"))
     C = cxroots.Circle(circle_center, float(circle_radius))
     root_result = C.roots(f, df, int_method="romb")
-
-    print("py roots", root_result.roots)
-    print("py multiplicities", root_result.multiplicities)
-
-    roots = {"roots": root_result.roots, "multiplicities": root_result.multiplicities}
-
-    return roots
+    return {"roots": root_result.roots, "multiplicities": root_result.multiplicities}
 
 
 run_cxroots(**cxroots_args.to_py())
