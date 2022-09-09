@@ -41,10 +41,10 @@ try {
 }
 
 const App = () => {
-  const [functionText, setFunctionText] = useState("");
-  const [functionLaTeX, setFunctionLaTeX] = useState("f(z)=");
+  const [functionText, setFunctionText] = useState("sin(z)+i");
+  const [functionLaTeX, setFunctionLaTeX] = useState("f(z)=sin(z)+i");
   const [rootResult, setRootResult] = useState({"roots": [], "multiplicities": []})
-  const [previewContour, setPreviewContour] = useState({type: 'circle', center: 0, radius: 2})
+  const [previewContour, setPreviewContour] = useState({type: 'circle', center: 0, radius: 3})
 
   useEffect(() => {
     const latex = ParseLatex(functionText)
