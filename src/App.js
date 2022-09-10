@@ -5,7 +5,8 @@ import script from "./python/main.py";
 import "./App.css";
 import { CxPlot } from './CxPlot.js';
 import { create, all } from 'mathjs'
-import {Button, TextField, Grid} from '@mui/material';
+import {TextField, Grid} from '@mui/material';
+import { LoadingButton } from '@mui/lab';
 
 const config = { }
 const math = create(all, config)
@@ -45,6 +46,7 @@ const App = () => {
   const [functionLaTeX, setFunctionLaTeX] = useState("f(z)=sin(z)+i");
   const [rootResult, setRootResult] = useState({"roots": [], "multiplicities": []})
   const [previewContour, setPreviewContour] = useState({type: 'circle', center: 0, radius: 3})
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     const latex = ParseLatex(functionText)
@@ -53,6 +55,7 @@ const App = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setLoading(true)
     const result = await runCxroots({
       function_string: functionText,
       circle_center: previewContour.center,
@@ -73,6 +76,7 @@ const App = () => {
       "multiplicities": multiplicities, 
       "contour": previewContour
     })
+    setLoading(false)
   };
 
 
@@ -130,7 +134,7 @@ const App = () => {
             />
           </Grid>
           <Grid item xs={12}>
-            <Button disabled={functionLaTeX===undefined || functionLaTeX===''} variant="contained" onClick={handleSubmit}>Find the Roots</Button>
+            <LoadingButton loading={loading} disabled={functionLaTeX===undefined || functionLaTeX===''} variant="contained" onClick={handleSubmit}>Find the Roots</LoadingButton>
           </Grid>
         </Grid>
         <CxPlot
