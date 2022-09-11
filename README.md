@@ -18,7 +18,6 @@ Used https://github.com/xhlulu/react-pyodide-template as an original JS template
 
 ## TODO
 
-- Error "pyodide is already loading" when trying to run pyodide again
 - Can latex rerender logic be simplified?
 - Firefox out of memory error after running pyodide a few times: https://github.com/pyodide/pyodide/issues/1333
 - Convert to TS: https://github.com/pyodide/pyodide/issues/552#issuecomment-781770000
