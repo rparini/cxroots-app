@@ -5,12 +5,10 @@ import script from "./python/main.py";
 import "./App.css";
 import { CxPlot } from './CxPlot.js';
 import { create, all } from 'mathjs'
-import {TextField, Grid} from '@mui/material';
+import {TextField, Grid, Box, Typography} from '@mui/material';
 import { LoadingButton } from '@mui/lab';
 
-const config = { }
-const math = create(all, config)
-
+const math = create(all)
 const nerdamer = require("nerdamer");
 
 const loadPyodide = async () => {
@@ -92,68 +90,97 @@ const App = () => {
 
   return (
     <div className="App">
-        <h1>cxroots: A rootfinder for complex analytic functions</h1>
-        <Grid container padding={5} spacing={2}>
-          <Grid item xs={12}>
-            {/* The roots of a function, <TeX math={'f(z)'}/>, of a single complex valued variable, <TeX math={'z'}/>, are the values of <TeX math={'z'}/> for which <TeX math={'f(z)=0'}/>.  */}
-            Find all the roots of a function <TeX math={'f(z)'}/> within a given circle in the complex plane.
+        <Box
+          display="flex"
+          justifyContent="center"
+        >
+          <Grid container padding={5} spacing={2} maxWidth={800}>
+            <Grid item xs={12}>
+              <Typography variant="h2" align="center">
+                cxroots
+              </Typography>
+            </Grid>
+            <Grid item xs={12}>
+              {/* The roots of a function, <TeX math={'f(z)'}/>, of a single complex valued variable, <TeX math={'z'}/>, are the values of <TeX math={'z'}/> for which <TeX math={'f(z)=0'}/>.  */}
+              Find all the roots of a function <TeX math={'f(z)'}/> within a given circle in the complex plane.
+            </Grid>
+            <Grid item xs={12}>
+              <TeX math={'f(z)'}/> must have no roots or poles on the circle and must be analytic within the circle
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                fullWidth
+                error={functionLaTeX===undefined}
+                helperText={functionLaTeX===undefined ? "Unable to parse":undefined}
+                variant="outlined"
+                label={functionLaTeX===undefined || functionLaTeX==='' ? <TeX math={'f(z)'} /> :  <TeX math={'f(z)='+functionLaTeX} />}
+                type='text'
+                value={functionText}
+                onChange={(event) => setFunctionText(event.target.value)}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              Define the circle to find the roots in:
+            </Grid>
+            <Grid item xs={4}>
+              <TextField
+                fullWidth
+                type='number'
+                label='Radius'
+                value={previewContour.radius}
+                onChange={(event) => setPreviewContour({...previewContour, radius: parseFloat(event.target.value)})}
+              />
+            </Grid>
+            <Grid item xs={4}>
+              <TextField
+                fullWidth
+                type='number'
+                label={<TeX math={'\\text{Re}[\\text{center}]'}/>}
+                value={math.re(previewContour.center)}
+                onChange={(event) => setPreviewContour({...previewContour, center: math.complex(event.target.value, math.im(previewContour.center))})}
+              />
+            </Grid>
+            <Grid item xs={4}>
+              <TextField
+                fullWidth
+                type="number"
+                label={<TeX math={'\\text{Im}[\\text{center}]'}/>}
+                value={math.im(previewContour.center)}
+                onChange={(event) => setPreviewContour({...previewContour, center: math.complex(math.re(previewContour.center), event.target.value)})}
+              />
+            </Grid>
+            <Grid 
+              container
+              item xs={12}   
+              direction="column"
+              alignItems="center"
+              justifyContent="center"
+            >
+              <LoadingButton 
+                loading={loading} 
+                disabled={functionLaTeX===undefined || functionLaTeX===''} 
+                variant="contained" 
+                onClick={handleSubmit}>
+                  Find the Roots
+                </LoadingButton>
+            </Grid>
+            <Grid 
+              container
+              item xs={12}   
+              direction="column"
+              alignItems="center"
+              justifyContent="center"
+            >
+              <CxPlot
+                functionText={rootResult.functionText}
+                roots={rootResult.roots} 
+                multiplicities={rootResult.multiplicities} 
+                contour={rootResult.contour} 
+                previewContour={previewContour}
+              />
+            </Grid>
           </Grid>
-          <Grid item xs={12}>
-            <TeX math={'f(z)'}/> must have no roots or poles on the circle and must be analytic within the circle
-          </Grid>
-          <Grid item xs={12}>
-            <TextField
-              fullWidth
-              error={functionLaTeX===undefined}
-              helperText={functionLaTeX===undefined ? "Unable to parse":undefined}
-              variant="outlined"
-              label={functionLaTeX===undefined || functionLaTeX==='' ? <TeX math={'f(z)'} /> :  <TeX math={'f(z)='+functionLaTeX} />}
-              type='text'
-              value={functionText}
-              onChange={(event) => setFunctionText(event.target.value)}
-            />
-          </Grid>
-          <Grid item xs={12}>
-            Define the circle to find the roots in:
-          </Grid>
-          <Grid item xs={4}>
-            <TextField
-              fullWidth
-              type='number'
-              label='Radius'
-              value={previewContour.radius}
-              onChange={(event) => setPreviewContour({...previewContour, radius: parseFloat(event.target.value)})}
-            />
-          </Grid>
-          <Grid item xs={4}>
-            <TextField
-              fullWidth
-              type='number'
-              label={<TeX math={'\\text{Re}[\\text{center}]'}/>}
-              value={math.re(previewContour.center)}
-              onChange={(event) => setPreviewContour({...previewContour, center: math.complex(event.target.value, math.im(previewContour.center))})}
-            />
-          </Grid>
-          <Grid item xs={4}>
-            <TextField
-              fullWidth
-              type="number"
-              label={<TeX math={'\\text{Im}[\\text{center}]'}/>}
-              value={math.im(previewContour.center)}
-              onChange={(event) => setPreviewContour({...previewContour, center: math.complex(math.re(previewContour.center), event.target.value)})}
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <LoadingButton loading={loading} disabled={functionLaTeX===undefined || functionLaTeX===''} variant="contained" onClick={handleSubmit}>Find the Roots</LoadingButton>
-          </Grid>
-        </Grid>
-        <CxPlot
-          functionText={rootResult.functionText}
-          roots={rootResult.roots} 
-          multiplicities={rootResult.multiplicities} 
-          contour={rootResult.contour} 
-          previewContour={previewContour}
-        />
+        </Box>
     </div>
   );
 };

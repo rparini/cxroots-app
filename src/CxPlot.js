@@ -2,12 +2,9 @@ import React from 'react';
 import Plot from 'react-plotly.js';
 import { create, all } from 'mathjs';
 
-const config = { }
-const math = create(all, config)
+const math = create(all)
 
 export function CxPlot({functionText, roots, multiplicities, contour, previewContour}) {
-    console.log(previewContour)
-    console.log(functionText)
     return (
       <Plot
         data={[
