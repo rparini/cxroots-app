@@ -96,7 +96,14 @@ const App = () => {
           display="flex"
           justifyContent="center"
         >
-          <Grid container padding={5} spacing={2} maxWidth={800}>
+          <Grid 
+            container 
+            padding={5} 
+            spacing={2} 
+            maxWidth={800} 
+            alignItems="center"
+            justifyContent="center"
+          >
             <Grid item xs={12}>
               <Typography variant="h2" align="center">
                 cxroots
@@ -124,16 +131,7 @@ const App = () => {
             <Grid item xs={12}>
               Define the circle to find the roots in:
             </Grid>
-            <Grid item xs={4}>
-              <TextField
-                fullWidth
-                type='number'
-                label='Radius'
-                value={previewContour.radius}
-                onChange={(event) => setPreviewContour({...previewContour, radius: parseFloat(event.target.value)})}
-              />
-            </Grid>
-            <Grid item xs={4}>
+            <Grid item xs={4} style = {{minWidth: "120px"}}>
               <TextField
                 fullWidth
                 type='number'
@@ -142,13 +140,22 @@ const App = () => {
                 onChange={(event) => setPreviewContour({...previewContour, center: math.complex(event.target.value, math.im(previewContour.center))})}
               />
             </Grid>
-            <Grid item xs={4}>
+            <Grid item xs={4} style = {{minWidth: "120px"}}>
               <TextField
                 fullWidth
                 type="number"
                 label={<TeX math={'\\text{Im}[\\text{center}]'}/>}
                 value={math.im(previewContour.center)}
                 onChange={(event) => setPreviewContour({...previewContour, center: math.complex(math.re(previewContour.center), event.target.value)})}
+              />
+            </Grid>
+            <Grid item xs={4} style = {{minWidth: "120px"}}>
+              <TextField
+                fullWidth
+                type='number'
+                label='Radius'
+                value={previewContour.radius}
+                onChange={(event) => setPreviewContour({...previewContour, radius: parseFloat(event.target.value)})}
               />
             </Grid>
             <Grid 
@@ -168,7 +175,7 @@ const App = () => {
             </Grid>
             <Grid 
               container
-              item xs={12}   
+              item xs={12}
               direction="column"
               alignItems="center"
               justifyContent="center"
