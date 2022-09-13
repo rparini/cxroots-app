@@ -21,6 +21,8 @@ export function CxPlot({functionText, roots, multiplicities, contour, previewCon
             marker: {color: 'blue'},
           },
         ]}
+        useResizeHandler={true}
+        style={{width: "100%", height: "100%"}}
         layout={{
           autosize: true, 
           title: functionText === undefined ? '' : '$\\text{Roots of }' + functionText + '$', 
