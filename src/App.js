@@ -76,7 +76,9 @@ const App = () => {
     multiplicities = multiplicities.toJs()
     // .toJs does not automatically work for complex numbers so workaround
     roots = roots.toJs({depth : 1}).map(z => z.toString())
-    roots = roots.map(z => z.replace('j','i'))
+    // () replacement because math.complex can't handle "(1+1i)", has to be "1+1i"
+    roots = roots.map(z => z.replace('j','i').replace('(','').replace(')',''))
+    console.log('rootsHERE', roots)
     roots = roots.map(z => math.complex(z))
     setRootResult({
       "functionText": functionLaTeX, 
