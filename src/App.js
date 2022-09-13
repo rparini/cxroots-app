@@ -13,14 +13,17 @@ const math = create(all, config)
 
 const nerdamer = require("nerdamer");
 
-const runCxroots = async (python_args) => {
-  const scriptText = await (await fetch(script)).text();
-
+const loadPyodide = async () => {
   const pyodide = await window.loadPyodide({
     indexURL: "https://cdn.jsdelivr.net/pyodide/v0.21.2/full/",
   });
   // Packages in https://github.com/pyodide/pyodide/tree/main/packages
   await pyodide.loadPackage(["micropip", "numpy", "scipy", "sympy"]);
+  return pyodide
+}
+
+const runCxroots = async (pyodide, python_args) => {
+  const scriptText = await (await fetch(script)).text();
 
   // Set keys on self, so that `from js import key` works.
   window.self["cxroots_args"] = python_args;
@@ -47,16 +50,23 @@ const App = () => {
   const [rootResult, setRootResult] = useState({"roots": [], "multiplicities": []})
   const [previewContour, setPreviewContour] = useState({type: 'circle', center: 0, radius: 3})
   const [loading, setLoading] = useState(false)
+  const [pyodide, setPyodide] = useState(null)
 
   useEffect(() => {
     const latex = ParseLatex(functionText)
     setFunctionLaTeX(latex);
   }, [functionText]);
 
+  if (pyodide === null) {
+    setPyodide('loading')
+    setLoading(true)
+    loadPyodide().then(setPyodide).then(() => setLoading(false))
+  }
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     setLoading(true)
-    const result = await runCxroots({
+    const result = await runCxroots(pyodide, {
       function_string: functionText,
       circle_center: previewContour.center,
       circle_radius: previewContour.radius,
