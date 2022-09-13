@@ -111,10 +111,7 @@ const App = () => {
             </Grid>
             <Grid item xs={12}>
               {/* The roots of a function, <TeX math={'f(z)'}/>, of a single complex valued variable, <TeX math={'z'}/>, are the values of <TeX math={'z'}/> for which <TeX math={'f(z)=0'}/>.  */}
-              Find all the roots of a function <TeX math={'f(z)'}/> within a given circle in the complex plane.
-            </Grid>
-            <Grid item xs={12}>
-              <TeX math={'f(z)'}/> must have no roots or poles on the circle and must be analytic within the circle
+              Find all the roots of a function <TeX math={'f(z)'}/> within a given circle in the complex plane. <TeX math={'f(z)'}/> must have no roots or poles on the circle and must be analytic within the circle.
             </Grid>
             <Grid item xs={12}>
               <TextField
