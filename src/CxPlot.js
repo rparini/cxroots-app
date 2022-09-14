@@ -32,18 +32,18 @@ export function CxPlot({functionText, roots, multiplicities, contour, previewCon
             contour === undefined ? undefined : {
               type: 'circle', 
               line: {dash: "dash"},
-              x0: math.re(contour.center) - contour.radius, 
-              x1: math.re(contour.center) + contour.radius,
-              y0: math.im(contour.center) - contour.radius,
-              y1: math.im(contour.center) + contour.radius
+              x0: contour.centerRe - contour.radius, 
+              x1: contour.centerRe + contour.radius,
+              y0: contour.centerIm - contour.radius,
+              y1: contour.centerIm + contour.radius
             },
             {
               type: 'circle',
               line: {dash: "dash", color: 'rgba(0,0,0,0.2)'},
-              x0: math.re(previewContour.center) - previewContour.radius, 
-              x1: math.re(previewContour.center) + previewContour.radius,
-              y0: math.im(previewContour.center) - previewContour.radius,
-              y1: math.im(previewContour.center) + previewContour.radius
+              x0: previewContour.centerRe - previewContour.radius, 
+              x1: previewContour.centerRe + previewContour.radius,
+              y0: previewContour.centerIm - previewContour.radius,
+              y1: previewContour.centerIm + previewContour.radius
             },            
           ]
         }}

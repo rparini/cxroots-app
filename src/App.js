@@ -46,7 +46,7 @@ const App = () => {
   const [functionText, setFunctionText] = useState("sin(z)+i");
   const [functionLaTeX, setFunctionLaTeX] = useState("f(z)=sin(z)+i");
   const [rootResult, setRootResult] = useState({"roots": [], "multiplicities": []})
-  const [previewContour, setPreviewContour] = useState({type: 'circle', center: 0, radius: 3})
+  const [previewContour, setPreviewContour] = useState({type: 'circle', centerRe: 0, centerIm: 0, radius: 3})
   const [loading, setLoading] = useState(false)
   const [pyodide, setPyodide] = useState(null)
 
@@ -66,7 +66,7 @@ const App = () => {
     setLoading(true)
     const result = await runCxroots(pyodide, {
       function_string: functionText,
-      circle_center: previewContour.center,
+      circle_center: math.complex(previewContour.centerRe, previewContour.centerIm),
       circle_radius: previewContour.radius,
     });
 
@@ -133,8 +133,9 @@ const App = () => {
                 fullWidth
                 type='number'
                 label={<TeX math={'\\text{Re}[\\text{center}]'}/>}
-                value={math.re(previewContour.center)}
-                onChange={(event) => setPreviewContour({...previewContour, center: math.complex(event.target.value, math.im(previewContour.center))})}
+                InputLabelProps={{shrink: true}}
+                defaultValue={0}
+                onChange={(event) => setPreviewContour({...previewContour, centerRe: event.target.value})}
               />
             </Grid>
             <Grid item xs={4} style = {{minWidth: "120px"}}>
@@ -142,8 +143,9 @@ const App = () => {
                 fullWidth
                 type="number"
                 label={<TeX math={'\\text{Im}[\\text{center}]'}/>}
-                value={math.im(previewContour.center)}
-                onChange={(event) => setPreviewContour({...previewContour, center: math.complex(math.re(previewContour.center), event.target.value)})}
+                InputLabelProps={{shrink: true}}
+                defaultValue={0}
+                onChange={(event) => setPreviewContour({...previewContour, centerIm: event.target.value})}
               />
             </Grid>
             <Grid item xs={4} style = {{minWidth: "120px"}}>
