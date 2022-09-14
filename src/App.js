@@ -117,7 +117,7 @@ const App = () => {
               <TextField
                 fullWidth
                 error={functionLaTeX===undefined}
-                helperText={functionLaTeX===undefined ? "Unable to parse":undefined}
+                helperText={functionLaTeX===undefined ? "Unable to parse": ""}
                 variant="outlined"
                 label={functionLaTeX===undefined || functionLaTeX==='' ? <TeX math={'f(z)'} /> :  <TeX math={'f(z)='+functionLaTeX} />}
                 type='text'
