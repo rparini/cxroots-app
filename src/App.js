@@ -149,10 +149,13 @@ const App = () => {
             <Grid item xs={4} style = {{minWidth: "120px"}}>
               <TextField
                 fullWidth
-                type='number'
+                type="number"
                 label='Radius'
                 value={previewContour.radius}
+                inputProps={{ inputMode: 'numeric', min: 0 }}
                 onChange={(event) => setPreviewContour({...previewContour, radius: parseFloat(event.target.value)})}
+                error={previewContour.radius <= 0}
+                helperText={previewContour.radius <= 0 ? "Must be a number > 0" : ""}
               />
             </Grid>
             <Grid 
