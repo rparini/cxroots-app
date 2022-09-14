@@ -135,7 +135,9 @@ const App = () => {
                 label={<TeX math={'\\text{Re}[\\text{center}]'}/>}
                 InputLabelProps={{shrink: true}}
                 defaultValue={0}
-                onChange={(event) => setPreviewContour({...previewContour, centerRe: event.target.value})}
+                onChange={(event) => setPreviewContour({...previewContour, centerRe: parseFloat(event.target.value)})}
+                error={isNaN(previewContour.centerRe)}
+                helperText={isNaN(previewContour.centerRe) ? "Must be a number" : " "}
               />
             </Grid>
             <Grid item xs={4} style = {{minWidth: "120px"}}>
@@ -145,7 +147,9 @@ const App = () => {
                 label={<TeX math={'\\text{Im}[\\text{center}]'}/>}
                 InputLabelProps={{shrink: true}}
                 defaultValue={0}
-                onChange={(event) => setPreviewContour({...previewContour, centerIm: event.target.value})}
+                onChange={(event) => setPreviewContour({...previewContour, centerIm: parseFloat(event.target.value)})}
+                error={isNaN(previewContour.centerIm)}
+                helperText={isNaN(previewContour.centerIm) ? "Must be a number" : " "}
               />
             </Grid>
             <Grid item xs={4} style = {{minWidth: "120px"}}>
@@ -157,7 +161,7 @@ const App = () => {
                 inputProps={{ inputMode: 'numeric', min: 0 }}
                 onChange={(event) => setPreviewContour({...previewContour, radius: parseFloat(event.target.value)})}
                 error={previewContour.radius <= 0}
-                helperText={previewContour.radius <= 0 ? "Must be a number > 0" : ""}
+                helperText={previewContour.radius <= 0 ? "Must be a number > 0" : " "}
               />
             </Grid>
             <Grid 
@@ -169,7 +173,7 @@ const App = () => {
             >
               <LoadingButton 
                 loading={loading} 
-                disabled={functionLaTeX===undefined || functionLaTeX===''} 
+                disabled={functionLaTeX===undefined || functionLaTeX==='' || isNaN(previewContour.centerRe) || isNaN(previewContour.centerIm) || previewContour.radius <= 0} 
                 variant="contained" 
                 onClick={handleSubmit}>
                   Find the Roots
