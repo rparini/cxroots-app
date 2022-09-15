@@ -34,3 +34,4 @@ venv.bak/
 # node
 node_modules
 .eslintcache
+*.swp
