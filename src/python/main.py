@@ -10,6 +10,8 @@ await micropip.install(
     ]
 )
 
+from typing import Union
+
 from js import cxroots_args
 from sympy import diff, lambdify
 from sympy.parsing.sympy_parser import (
@@ -22,7 +24,7 @@ from sympy.parsing.sympy_parser import (
 import cxroots
 
 
-def run_cxroots(function_string, circle_center, circle_radius):
+def run_cxroots(function_string: str, circle_center, circle_radius: Union[float, int]):
     # Parse the input function string into a sympy expression and compute derivatives
     transformations = standard_transformations + (
         implicit_multiplication_application,
@@ -38,7 +40,7 @@ def run_cxroots(function_string, circle_center, circle_radius):
 
     # find the roots
     circle_center = complex(str(circle_center).replace("i", "j"))
-    C = cxroots.Circle(circle_center, float(circle_radius))
+    C = cxroots.Circle(circle_center, circle_radius)
     root_result = C.roots(f, df, int_method="romb")
     return {"roots": root_result.roots, "multiplicities": root_result.multiplicities}
 

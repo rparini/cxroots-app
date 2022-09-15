@@ -70,7 +70,6 @@ const App = () => {
       circle_radius: previewContour.radius,
     });
 
-    console.log("result", result);
     let roots = result.get('roots');
     let multiplicities = result.get('multiplicities');
     multiplicities = multiplicities.toJs()
@@ -78,7 +77,6 @@ const App = () => {
     roots = roots.toJs({depth : 1}).map(z => z.toString())
     // () replacement because math.complex can't handle "(1+1i)", has to be "1+1i"
     roots = roots.map(z => z.replace('j','i').replace('(','').replace(')',''))
-    console.log('rootsHERE', roots)
     roots = roots.map(z => math.complex(z))
     setRootResult({
       "functionText": functionLaTeX, 
