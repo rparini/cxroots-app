@@ -8,8 +8,8 @@ import App from './App';
 //   ReactDOM.render(<App />, div);
 // });
 
-test("renders learn react link", () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+// test("renders cxroots", () => {
+//   render(<App />);
+//   const linkElement = screen.getByText("cxroots");
+//   expect(linkElement).toBeInTheDocument();
+// });
