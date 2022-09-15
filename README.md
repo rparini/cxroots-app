@@ -1,6 +1,6 @@
 # cxroots-app: https://cxroots.herokuapp.com/
 
-A web application demonstrating some of the features of [cxroots](https://github.com/rparini/cxroots).
+A web application demonstrating some of the features of the [cxroots](https://github.com/rparini/cxroots) Python library, built with [React](https://reactjs.org/) and [Pyodide](https://pyodide.org/en/stable/).
 
 ## Dev
 
