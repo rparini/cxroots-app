@@ -1,7 +1,8 @@
 import micropip
 
 
-# Think this gets redownloaded every time this script is run
+# These are packages that aren't bundled with pyodide so have to be installed from pypi
+# The packages only seem to be loaded the first time the script is run
 await micropip.install(
     [
         "https://files.pythonhosted.org/packages/97/fa/29467f8cbd3c1f8e687419fa6c2d3f8dc48308fd5a3ff2b4f221af3b1ea2/cxroots-2.0.0-py3-none-any.whl",
