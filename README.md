@@ -9,11 +9,10 @@ npm i
 npm start
 ```
 
-## Production
+## Test
 
 ```
-npm i -g serve
-serve -s build
+npm test
 ```
 
 ## Acknowledgement
