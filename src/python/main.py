@@ -39,7 +39,7 @@ def run_cxroots(function_string: str, circle_center, circle_radius: Union[float,
     df = lambdify("z", deq, modules="numpy")
 
     # find the roots
-    circle_center = complex(str(circle_center).replace("i", "j"))
+    circle_center = complex(str(circle_center).replace("i", "j").replace(" ", ""))
     C = cxroots.Circle(circle_center, circle_radius)
     root_result = C.roots(f, df, int_method="romb")
     return {"roots": root_result.roots, "multiplicities": root_result.multiplicities}
