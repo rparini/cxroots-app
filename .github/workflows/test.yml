@@ -1,0 +1,11 @@
+name: Test
+
+on: [push]
+
+jobs:
+  prettier:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Check prettier formatting
+        run: npx prettier --check .
