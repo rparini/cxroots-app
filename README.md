@@ -12,8 +12,7 @@ npm start
 ```
 
 - Install [pre-commit](https://pre-commit.com/) and then run `pre-commit install`. The pre-commit scripts can also be run manually with `pre-commit run --all-files`
-- The project uses:
-  - [prettier](https://prettier.io/) to maintain consistent formatting. It is run as part of the pre-commit hook and is recommended to be run on save in the developer's editor.
+- The project uses [prettier](https://prettier.io/) to maintain consistent formatting. It is run as part of the pre-commit hook and is recommended to be run on save in the developer's editor.
 
 ## Acknowledgement
 
