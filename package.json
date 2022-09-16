@@ -49,7 +49,7 @@
   "devDependencies": {
     "gh-pages": "^4.0.0",
     "jest-canvas-mock": "^2.4.0",
-    "prettier": "2.4.1",
+    "prettier": "^2.4.1",
     "react-scripts": "^5.0.1"
   }
 }
