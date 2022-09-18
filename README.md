@@ -19,7 +19,7 @@ npm start
 
 ### Testing
 
-Tests are run using [Jest](https://jestjs.io/) with
+Tests are run with [Jest](https://jestjs.io/) and are invoked with
 
 ```
 npm test
