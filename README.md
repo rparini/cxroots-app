@@ -1,3 +1,4 @@
+[![Test](https://github.com/rparini/cxroots-app/actions/workflows/test.yml/badge.svg)](https://github.com/rparini/cxroots-app/actions/workflows/test.yml)
 [![Coverage Status](https://coveralls.io/repos/github/rparini/cxroots-app/badge.svg?branch=master)](https://coveralls.io/github/rparini/cxroots-app?branch=master)
 
 # cxroots-app: https://rparini.github.io/cxroots-app/
