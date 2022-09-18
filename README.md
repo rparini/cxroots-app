@@ -1,3 +1,5 @@
+[![Coverage Status](https://coveralls.io/repos/github/rparini/cxroots-app/badge.svg?branch=master)](https://coveralls.io/github/rparini/cxroots-app?branch=master)
+
 # cxroots-app: https://rparini.github.io/cxroots-app/
 
 A web application demonstrating the [cxroots](https://github.com/rparini/cxroots) Python library and built with [React](https://reactjs.org/) and [Pyodide](https://pyodide.org/en/stable/).
