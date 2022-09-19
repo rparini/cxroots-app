@@ -45,7 +45,7 @@ const ParseLatex = (text) => {
   }
 };
 
-const App = () => {
+export const App = () => {
   const [functionText, setFunctionText] = useState("sin(z)+i");
   const [functionLaTeX, setFunctionLaTeX] = useState("f(z)=sin(z)+i");
   const [rootResult, setRootResult] = useState({
@@ -253,5 +253,3 @@ const App = () => {
     </div>
   );
 };
-
-export default App;
