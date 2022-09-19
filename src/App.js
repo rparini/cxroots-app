@@ -16,7 +16,7 @@ const nerdamer = require("nerdamer");
 
 const loadPyodide = async () => {
   const pyodide = await window.loadPyodide({
-    indexURL: "https://cdn.jsdelivr.net/pyodide/v0.21.2/full/",
+    indexURL: pyodideURL,
   });
   // Packages in https://github.com/pyodide/pyodide/tree/main/packages
   await pyodide.loadPackage(["micropip", "numpy", "scipy", "sympy"]);
