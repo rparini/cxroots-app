@@ -8,6 +8,9 @@ import { create, all } from "mathjs";
 import { TextField, Grid, Box, Typography } from "@mui/material";
 import { LoadingButton } from "@mui/lab";
 
+var $scriptjs = require("scriptjs");
+
+const pyodideURL = "https://cdn.jsdelivr.net/pyodide/v0.21.3/full/";
 const math = create(all);
 const nerdamer = require("nerdamer");
 
@@ -66,9 +69,12 @@ const App = () => {
   if (pyodide === null) {
     setPyodide("loading");
     setLoading(true);
-    loadPyodide()
-      .then(setPyodide)
-      .then(() => setLoading(false));
+
+    $scriptjs(pyodideURL + "pyodide.js", function () {
+      loadPyodide()
+        .then(setPyodide)
+        .then(() => setLoading(false));
+    });
   }
 
   const handleSubmit = async (event) => {
