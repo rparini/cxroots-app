@@ -23,6 +23,7 @@ function loadScript(url) {
 }
 
 const loadPyodide = async () => {
+  await loadScript(pyodideURL + "pyodide.js");
   const pyodide = await window.loadPyodide({
     indexURL: pyodideURL,
   });
@@ -51,8 +52,7 @@ export const PyodideButton = ({ disabled, onClick }) => {
   if (pyodide == null) {
     setPyodide("loading");
     setLoading(true);
-    loadScript(pyodideURL + "pyodide.js")
-      .then(loadPyodide)
+    loadPyodide()
       .then(setPyodide)
       .then(() => setLoading(false));
   }
