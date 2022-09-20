@@ -3,31 +3,19 @@ import "katex/dist/katex.min.css";
 import TeX from "@matejmazur/react-katex";
 import script from "./python/main.py";
 import "./App.css";
-import { CxPlot } from "./CxPlot.js";
+import { CxPlot } from "./components/CxPlot.js";
+import { PyodideButton } from "./components/PyodideButton";
 import { create, all } from "mathjs";
 import { TextField, Grid, Box, Typography } from "@mui/material";
-import { LoadingButton } from "@mui/lab";
 
-var $scriptjs = require("scriptjs");
-
-const pyodideURL = "https://cdn.jsdelivr.net/pyodide/v0.21.3/full/";
 const math = create(all);
 const nerdamer = require("nerdamer");
 
-const loadPyodide = async () => {
-  const pyodide = await window.loadPyodide({
-    indexURL: "https://cdn.jsdelivr.net/pyodide/v0.21.2/full/",
-  });
-  // Packages in https://github.com/pyodide/pyodide/tree/main/packages
-  await pyodide.loadPackage(["micropip", "numpy", "scipy", "sympy"]);
-  return pyodide;
-};
-
-const runCxroots = async (pyodide, python_args) => {
+export const runCxroots = async (pyodide, pythonArgs) => {
   const scriptText = await (await fetch(script)).text();
 
   // Set keys on self, so that `from js import key` works.
-  window.self["cxroots_args"] = python_args;
+  window.self["cxroots_args"] = pythonArgs;
 
   return await pyodide.runPythonAsync(scriptText);
 };
@@ -45,7 +33,7 @@ const ParseLatex = (text) => {
   }
 };
 
-const App = () => {
+export const App = () => {
   const [functionText, setFunctionText] = useState("sin(z)+i");
   const [functionLaTeX, setFunctionLaTeX] = useState("f(z)=sin(z)+i");
   const [rootResult, setRootResult] = useState({
@@ -58,28 +46,14 @@ const App = () => {
     centerIm: 0,
     radius: 3,
   });
-  const [loading, setLoading] = useState(false);
-  const [pyodide, setPyodide] = useState(null);
 
   useEffect(() => {
     const latex = ParseLatex(functionText);
     setFunctionLaTeX(latex);
   }, [functionText]);
 
-  if (pyodide === null) {
-    setPyodide("loading");
-    setLoading(true);
-
-    $scriptjs(pyodideURL + "pyodide.js", function () {
-      loadPyodide()
-        .then(setPyodide)
-        .then(() => setLoading(false));
-    });
-  }
-
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event, pyodide) => {
     event.preventDefault();
-    setLoading(true);
     const result = await runCxroots(pyodide, {
       function_string: functionText,
       circle_center: math.complex(
@@ -105,7 +79,6 @@ const App = () => {
       multiplicities: multiplicities,
       contour: previewContour,
     });
-    setLoading(false);
   };
 
   return (
@@ -217,8 +190,7 @@ const App = () => {
             alignItems="center"
             justifyContent="center"
           >
-            <LoadingButton
-              loading={loading}
+            <PyodideButton
               disabled={
                 functionLaTeX === undefined ||
                 functionLaTeX === "" ||
@@ -226,11 +198,10 @@ const App = () => {
                 isNaN(previewContour.centerIm) ||
                 previewContour.radius <= 0
               }
-              variant="contained"
               onClick={handleSubmit}
             >
               Find the Roots
-            </LoadingButton>
+            </PyodideButton>
           </Grid>
           <Grid
             container
@@ -253,5 +224,3 @@ const App = () => {
     </div>
   );
 };
-
-export default App;
