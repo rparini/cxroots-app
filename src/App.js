@@ -22,7 +22,7 @@ function loadScript(url) {
   });
 }
 
-const loadPyodide = async () => {
+export const loadPyodide = async () => {
   await loadScript(pyodideURL + "pyodide.js");
   const pyodide = await window.loadPyodide({
     indexURL: pyodideURL,
