@@ -23,11 +23,11 @@ const loadPyodide = async () => {
   return pyodide;
 };
 
-const runCxroots = async (pyodide, python_args) => {
+export const runCxroots = async (pyodide, pythonArgs) => {
   const scriptText = await (await fetch(script)).text();
 
   // Set keys on self, so that `from js import key` works.
-  window.self["cxroots_args"] = python_args;
+  window.self["cxroots_args"] = pythonArgs;
 
   return await pyodide.runPythonAsync(scriptText);
 };
