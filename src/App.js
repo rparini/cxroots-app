@@ -8,11 +8,19 @@ import { create, all } from "mathjs";
 import { TextField, Grid, Box, Typography } from "@mui/material";
 import { LoadingButton } from "@mui/lab";
 
-var $scriptjs = require("scriptjs");
-
 const pyodideURL = "https://cdn.jsdelivr.net/pyodide/v0.21.3/full/";
 const math = create(all);
 const nerdamer = require("nerdamer");
+
+function loadScript(url) {
+  return new Promise(function (resolve, reject) {
+    let script = document.createElement("script");
+    script.src = url;
+    script.onload = resolve;
+    script.onerror = reject;
+    document.head.appendChild(script);
+  });
+}
 
 const loadPyodide = async () => {
   const pyodide = await window.loadPyodide({
@@ -43,11 +51,10 @@ export const PyodideButton = ({ disabled, onClick }) => {
   if (pyodide == null) {
     setPyodide("loading");
     setLoading(true);
-    $scriptjs(pyodideURL + "pyodide.js", function () {
-      loadPyodide()
-        .then(setPyodide)
-        .then(() => setLoading(false));
-    });
+    loadScript(pyodideURL + "pyodide.js")
+      .then(loadPyodide)
+      .then(setPyodide)
+      .then(() => setLoading(false));
   }
 
   const onClickLoading = async (event) => {
