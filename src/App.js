@@ -32,6 +32,42 @@ export const runCxroots = async (pyodide, pythonArgs) => {
   return await pyodide.runPythonAsync(scriptText);
 };
 
+/**
+ * PyodideButton loads pyodide before being clickable and does
+ * not allow the button to be clicked while pyodide is running
+ */
+export const PyodideButton = ({ disabled, onClick }) => {
+  const [pyodide, setPyodide] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  if (pyodide == null) {
+    setPyodide("loading");
+    setLoading(true);
+    $scriptjs(pyodideURL + "pyodide.js", function () {
+      loadPyodide()
+        .then(setPyodide)
+        .then(() => setLoading(false));
+    });
+  }
+
+  const onClickLoading = async (event) => {
+    setLoading(true);
+    await onClick(event, pyodide);
+    setLoading(false);
+  };
+
+  return (
+    <LoadingButton
+      loading={loading}
+      disabled={disabled}
+      variant="contained"
+      onClick={onClickLoading}
+    >
+      Find the Roots
+    </LoadingButton>
+  );
+};
+
 const ParseLatex = (text) => {
   // This approach excludes sin/cos/exp/log/i
   // const regExp = /[a-yA-Z]/g;
@@ -58,28 +94,14 @@ export const App = () => {
     centerIm: 0,
     radius: 3,
   });
-  const [loading, setLoading] = useState(false);
-  const [pyodide, setPyodide] = useState(null);
 
   useEffect(() => {
     const latex = ParseLatex(functionText);
     setFunctionLaTeX(latex);
   }, [functionText]);
 
-  if (pyodide === null) {
-    setPyodide("loading");
-    setLoading(true);
-
-    $scriptjs(pyodideURL + "pyodide.js", function () {
-      loadPyodide()
-        .then(setPyodide)
-        .then(() => setLoading(false));
-    });
-  }
-
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event, pyodide) => {
     event.preventDefault();
-    setLoading(true);
     const result = await runCxroots(pyodide, {
       function_string: functionText,
       circle_center: math.complex(
@@ -105,7 +127,6 @@ export const App = () => {
       multiplicities: multiplicities,
       contour: previewContour,
     });
-    setLoading(false);
   };
 
   return (
@@ -217,8 +238,7 @@ export const App = () => {
             alignItems="center"
             justifyContent="center"
           >
-            <LoadingButton
-              loading={loading}
+            <PyodideButton
               disabled={
                 functionLaTeX === undefined ||
                 functionLaTeX === "" ||
@@ -226,11 +246,10 @@ export const App = () => {
                 isNaN(previewContour.centerIm) ||
                 previewContour.radius <= 0
               }
-              variant="contained"
               onClick={handleSubmit}
             >
               Find the Roots
-            </LoadingButton>
+            </PyodideButton>
           </Grid>
           <Grid
             container
