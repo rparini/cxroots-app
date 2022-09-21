@@ -1,9 +1,16 @@
+import React from "react";
 import { useState } from "react";
 import { LoadingButton } from "@mui/lab";
 
 const pyodideURL = "https://cdn.jsdelivr.net/pyodide/v0.21.3/full/";
 
-function loadScript(url) {
+declare global {
+  interface Window {
+    loadPyodide: any; // don't have proper types available as loading pyodide with CDN
+  }
+}
+
+function loadScript(url: string) {
   return new Promise(function (resolve, reject) {
     let script = document.createElement("script");
     script.src = url;
@@ -27,8 +34,8 @@ const loadPyodide = async () => {
  * PyodideButton loads pyodide before being clickable and does
  * not allow the button to be clicked while pyodide is running
  */
-export const PyodideButton = ({ disabled, onClick }) => {
-  const [pyodide, setPyodide] = useState(null);
+export const PyodideButton = (disabled: boolean, onClick: any) => {
+  const [pyodide, setPyodide] = useState<any>(null);
   const [loading, setLoading] = useState(false);
 
   if (pyodide == null) {
@@ -39,7 +46,7 @@ export const PyodideButton = ({ disabled, onClick }) => {
       .then(() => setLoading(false));
   }
 
-  const onClickLoading = async (event) => {
+  const onClickLoading: any = async (event: React.MouseEvent<HTMLElement>) => {
     setLoading(true);
     await onClick(event, pyodide);
     setLoading(false);
