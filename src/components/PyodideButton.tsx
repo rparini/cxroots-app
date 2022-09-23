@@ -34,7 +34,13 @@ const loadPyodide = async () => {
  * PyodideButton loads pyodide before being clickable and does
  * not allow the button to be clicked while pyodide is running
  */
-export const PyodideButton = (disabled: boolean, onClick: any) => {
+export const PyodideButton = ({
+  disabled,
+  onClick,
+}: {
+  disabled: boolean;
+  onClick: any;
+}) => {
   const [pyodide, setPyodide] = useState<any>(null);
   const [loading, setLoading] = useState(false);
 
