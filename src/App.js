@@ -3,7 +3,7 @@ import "katex/dist/katex.min.css";
 import TeX from "@matejmazur/react-katex";
 import script from "./python/main.py";
 import "./App.css";
-import { CxPlot } from "./components/CxPlot.js";
+import { CxPlot } from "./components/CxPlot";
 import { PyodideButton } from "./components/PyodideButton";
 import { create, all } from "mathjs";
 import { TextField, Grid, Box, Typography } from "@mui/material";
