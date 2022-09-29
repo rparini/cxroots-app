@@ -35,9 +35,11 @@ const loadPyodide = async () => {
  * not allow the button to be clicked while pyodide is running
  */
 export const PyodideButton = ({
+  children,
   disabled,
   onClick,
 }: {
+  children: string;
   disabled: boolean;
   onClick: any;
 }) => {

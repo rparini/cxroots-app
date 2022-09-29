@@ -5,12 +5,12 @@ import { create, all } from "mathjs";
 
 const math = create(all);
 
-export interface Contour {
+export type Contour = {
   type: string;
   centerRe: number;
   centerIm: number;
   radius: number;
-}
+};
 
 export function CxPlot({
   functionText,
@@ -22,7 +22,7 @@ export function CxPlot({
   functionText: string;
   roots: math.Complex[];
   multiplicities: number[];
-  contour: Contour;
+  contour?: Contour;
   previewContour: Contour;
 }) {
   const data: Plotly.Data[] = [

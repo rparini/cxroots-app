@@ -1,9 +1,10 @@
+import React from "react";
 import { useState, useEffect } from "react";
 import "katex/dist/katex.min.css";
 import TeX from "@matejmazur/react-katex";
-import script from "./python/main.py";
+// import script from "./python/main.py";
 import "./App.css";
-import { CxPlot } from "./components/CxPlot";
+import { CxPlot, Contour } from "./components/CxPlot";
 import { PyodideButton } from "./components/PyodideButton";
 import { create, all } from "mathjs";
 import { TextField, Grid, Box, Typography } from "@mui/material";
@@ -11,16 +12,24 @@ import { TextField, Grid, Box, Typography } from "@mui/material";
 const math = create(all);
 const nerdamer = require("nerdamer");
 
-export const runCxroots = async (pyodide, pythonArgs) => {
-  const scriptText = await (await fetch(script)).text();
+export const runCxroots = async (
+  pyodide: any,
+  pythonArgs: {
+    function_string: string;
+    circle_center: math.Complex;
+    circle_radius: number;
+  }
+) => {
+  const scriptText = await (await fetch("./python/main.py")).text();
 
   // Set keys on self, so that `from js import key` works.
+  // @ts-ignore
   window.self["cxroots_args"] = pythonArgs;
 
   return await pyodide.runPythonAsync(scriptText);
 };
 
-const ParseLatex = (text) => {
+const ParseLatex = (text: string) => {
   // This approach excludes sin/cos/exp/log/i
   // const regExp = /[a-yA-Z]/g;
   // if (regExp.test(text)) {
@@ -33,10 +42,18 @@ const ParseLatex = (text) => {
   }
 };
 
+type RootResult = {
+  functionText: string;
+  roots: math.Complex[];
+  multiplicities: number[];
+  contour?: Contour;
+};
+
 export const App = () => {
   const [functionText, setFunctionText] = useState("sin(z)+i");
   const [functionLaTeX, setFunctionLaTeX] = useState("f(z)=sin(z)+i");
-  const [rootResult, setRootResult] = useState({
+  const [rootResult, setRootResult] = useState<RootResult>({
+    functionText: "",
     roots: [],
     multiplicities: [],
   });
@@ -52,7 +69,10 @@ export const App = () => {
     setFunctionLaTeX(latex);
   }, [functionText]);
 
-  const handleSubmit = async (event, pyodide) => {
+  const handleSubmit = async (
+    event: React.MouseEvent<HTMLElement>,
+    pyodide: any
+  ) => {
     event.preventDefault();
     const result = await runCxroots(pyodide, {
       function_string: functionText,
@@ -67,12 +87,13 @@ export const App = () => {
     let multiplicities = result.get("multiplicities");
     multiplicities = multiplicities.toJs();
     // .toJs does not automatically work for complex numbers so workaround
-    roots = roots.toJs({ depth: 1 }).map((z) => z.toString());
+    roots = roots.toJs({ depth: 1 });
+    // roots = roots.map((z) => z.toString());
     // () replacement because math.complex can't handle "(1+1i)", has to be "1+1i"
-    roots = roots.map((z) =>
+    roots = roots.map((z: string) =>
       z.replace("j", "i").replace("(", "").replace(")", "")
     );
-    roots = roots.map((z) => math.complex(z));
+    roots = roots.map((z: string) => math.complex(z));
     setRootResult({
       functionText: functionLaTeX,
       roots: roots,
