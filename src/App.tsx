@@ -88,7 +88,7 @@ export const App = () => {
     multiplicities = multiplicities.toJs();
     // .toJs does not automatically work for complex numbers so workaround
     roots = roots.toJs({ depth: 1 });
-    // roots = roots.map((z) => z.toString());
+    roots = roots.map((z: number | string) => z.toString());
     // () replacement because math.complex can't handle "(1+1i)", has to be "1+1i"
     roots = roots.map((z: string) =>
       z.replace("j", "i").replace("(", "").replace(")", "")
