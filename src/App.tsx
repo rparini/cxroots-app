@@ -7,17 +7,16 @@ import script from "./python/main.py";
 import "./App.css";
 import { CxPlot, Contour } from "./components/CxPlot";
 import { PyodideButton } from "./components/PyodideButton";
-import { create, all } from "mathjs";
+import { Complex, complex } from "mathjs";
 import { TextField, Grid, Box, Typography } from "@mui/material";
 
-const math = create(all);
 const nerdamer = require("nerdamer");
 
 export const runCxroots = async (
   pyodide: any,
   pythonArgs: {
     function_string: string;
-    circle_center: math.Complex;
+    circle_center: Complex;
     circle_radius: number;
   }
 ) => {
@@ -45,7 +44,7 @@ const ParseLatex = (text: string) => {
 
 type RootResult = {
   functionText: string;
-  roots: math.Complex[];
+  roots: Complex[];
   multiplicities: number[];
   contour?: Contour;
 };
@@ -77,10 +76,7 @@ export const App = () => {
     event.preventDefault();
     const result = await runCxroots(pyodide, {
       function_string: functionText,
-      circle_center: math.complex(
-        previewContour.centerRe,
-        previewContour.centerIm
-      ),
+      circle_center: complex(previewContour.centerRe, previewContour.centerIm),
       circle_radius: previewContour.radius,
     });
 
@@ -94,7 +90,7 @@ export const App = () => {
     roots = roots.map((z: string) =>
       z.replace("j", "i").replace("(", "").replace(")", "")
     );
-    roots = roots.map((z: string) => math.complex(z));
+    roots = roots.map((z: string) => complex(z));
     setRootResult({
       functionText: functionLaTeX,
       roots: roots,

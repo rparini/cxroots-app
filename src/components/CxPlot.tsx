@@ -1,9 +1,7 @@
 import React from "react";
 import Plot from "react-plotly.js";
 import * as Plotly from "plotly.js";
-import { create, all } from "mathjs";
-
-const math = create(all);
+import { Complex } from "mathjs";
 
 export type Contour = {
   type: string;
@@ -20,7 +18,7 @@ export function CxPlot({
   previewContour,
 }: {
   functionText: string;
-  roots: math.Complex[];
+  roots: Complex[];
   multiplicities: number[];
   contour?: Contour;
   previewContour: Contour;
