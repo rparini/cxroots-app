@@ -17,7 +17,7 @@ export function CxPlot({
   contour,
   previewContour,
 }: {
-  functionText: string;
+  functionText: string | undefined;
   roots: Complex[];
   multiplicities: number[];
   contour?: Contour;

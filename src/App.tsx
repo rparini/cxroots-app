@@ -9,8 +9,7 @@ import { CxPlot, Contour } from "./components/CxPlot";
 import { PyodideButton } from "./components/PyodideButton";
 import { Complex, complex } from "mathjs";
 import { TextField, Grid, Box, Typography } from "@mui/material";
-
-const nerdamer = require("nerdamer");
+import { convertToLaTeX } from "nerdamer";
 
 export const runCxroots = async (
   pyodide: any,
@@ -36,14 +35,14 @@ const ParseLatex = (text: string) => {
   //   return undefined
   // }
   try {
-    return nerdamer.convertToLaTeX(text);
+    return convertToLaTeX(text);
   } catch (error) {
     return undefined;
   }
 };
 
 type RootResult = {
-  functionText: string;
+  functionText: string | undefined;
   roots: Complex[];
   multiplicities: number[];
   contour?: Contour;
@@ -51,7 +50,9 @@ type RootResult = {
 
 export const App = () => {
   const [functionText, setFunctionText] = useState("sin(z)+i");
-  const [functionLaTeX, setFunctionLaTeX] = useState("f(z)=sin(z)+i");
+  const [functionLaTeX, setFunctionLaTeX] = useState<string | undefined>(
+    "f(z)=sin(z)+i"
+  );
   const [rootResult, setRootResult] = useState<RootResult>({
     functionText: "",
     roots: [],
