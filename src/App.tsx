@@ -2,7 +2,8 @@ import React from "react";
 import { useState, useEffect } from "react";
 import "katex/dist/katex.min.css";
 import TeX from "@matejmazur/react-katex";
-// import script from "./python/main.py";
+// @ts-ignore
+import script from "./python/main.py";
 import "./App.css";
 import { CxPlot, Contour } from "./components/CxPlot";
 import { PyodideButton } from "./components/PyodideButton";
@@ -20,7 +21,7 @@ export const runCxroots = async (
     circle_radius: number;
   }
 ) => {
-  const scriptText = await (await fetch("./python/main.py")).text();
+  const scriptText = await (await fetch(script)).text();
 
   // Set keys on self, so that `from js import key` works.
   // @ts-ignore
