@@ -5,4 +5,6 @@
 import "@testing-library/jest-dom";
 // Fix react-plotly import: https://github.com/plotly/react-plotly.js/issues/115
 import "jest-canvas-mock";
-window.URL.createObjectURL = function () {};
+window.URL.createObjectURL = function () {
+  return "";
+};
