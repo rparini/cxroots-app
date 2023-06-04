@@ -3,7 +3,7 @@
 
 # https://rparini.github.io/cxroots-app/
 
-A web application demonstrating the [cxroots](https://github.com/rparini/cxroots) Python library and built with [React](https://reactjs.org/) and [Pyodide](https://pyodide.org/en/stable/).
+A React web application demonstrating the [cxroots](https://github.com/rparini/cxroots) Python library, using [Pyodide](https://pyodide.org/en/stable/) to run Python in the browser.
 
 ## Development
 
