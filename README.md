@@ -7,11 +7,29 @@ A web application demonstrating the [cxroots](https://github.com/rparini/cxroots
 
 ## Development
 
-Start a local server with
+[Install nvm](https://github.com/nvm-sh/nvm#installing-and-updating) to manage node versions. Then install the required node version with:
 
 ```
-npm i
-npm start
+nvm install
+nvm use
+```
+
+[Enable yarn](https://yarnpkg.com/getting-started/install) with
+
+```
+corepack enable
+```
+
+and then install the packages needed to build the application
+
+```
+yarn install --frozen-lockfile
+```
+
+You can then start a local server with
+
+```
+yarn start
 ```
 
 - Install [pre-commit](https://pre-commit.com/) and then run `pre-commit install`. The pre-commit scripts can also be run manually with `pre-commit run --all-files`
@@ -22,7 +40,7 @@ npm start
 Tests are run with [Jest](https://jestjs.io/) and are invoked with
 
 ```
-npm test
+yarn test
 ```
 
 Tests are [run in CI](https://github.com/rparini/cxroots-app/actions/workflows/test.yml) and a coverage report is uploaded to [Coveralls](https://coveralls.io/github/rparini/cxroots-app)
