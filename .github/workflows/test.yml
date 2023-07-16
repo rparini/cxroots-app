@@ -13,6 +13,18 @@ jobs:
           node-version-file: .nvmrc
       - name: Check prettier formatting
         run: npx prettier@$(jq .devDependencies.prettier package.json -r) --check .
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install node
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: .nvmrc
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+      - name: Build app
+        run: yarn build
   test:
     runs-on: ubuntu-latest
     steps:
