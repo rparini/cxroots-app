@@ -4,5 +4,8 @@
   "schedule": ["before 3am on Saturday"],
   "reviewers": ["rparini"],
   "automerge": true,
-  "automergeStrategy": "squash"
+  "automergeStrategy": "squash",
+  "pre-commit": {
+    "enabled": true
+  }
 }
