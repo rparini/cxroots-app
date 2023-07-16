@@ -7,5 +7,11 @@
   "automergeStrategy": "squash",
   "pre-commit": {
     "enabled": true
-  }
+  },
+  "packageRules": [
+    {
+      "matchPackagePatterns": "prettier",
+      "groupName": "prettier"
+    }
+  ]
 }
