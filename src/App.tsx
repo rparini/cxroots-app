@@ -17,7 +17,7 @@ export const runCxroots = async (
     function_string: string;
     circle_center: Complex;
     circle_radius: number;
-  }
+  },
 ) => {
   const scriptText = await (await fetch(script)).text();
 
@@ -51,7 +51,7 @@ type RootResult = {
 export const App = () => {
   const [functionText, setFunctionText] = useState("sin(z)+i");
   const [functionLaTeX, setFunctionLaTeX] = useState<string | undefined>(
-    "f(z)=sin(z)+i"
+    "f(z)=sin(z)+i",
   );
   const [rootResult, setRootResult] = useState<RootResult>({
     functionText: "",
@@ -72,7 +72,7 @@ export const App = () => {
 
   const handleSubmit = async (
     event: React.MouseEvent<HTMLElement>,
-    pyodide: any
+    pyodide: any,
   ) => {
     event.preventDefault();
     const result = await runCxroots(pyodide, {
@@ -89,7 +89,7 @@ export const App = () => {
     roots = roots.map((z: number | string) => z.toString());
     // () replacement because math.complex can't handle "(1+1i)", has to be "1+1i"
     roots = roots.map((z: string) =>
-      z.replace("j", "i").replace("(", "").replace(")", "")
+      z.replace("j", "i").replace("(", "").replace(")", ""),
     );
     roots = roots.map((z: string) => complex(z));
     setRootResult({
