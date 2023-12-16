@@ -2571,10 +2571,10 @@
   resolved "https://registry.yarnpkg.com/@types/plotly.js/-/plotly.js-2.12.18.tgz#7a231ce72a73fafe4842096b8c99d10a41b60962"
   integrity sha512-ff+CIEWnqZNjZqHtQZvkEAVuLs9fkm1f54QnPVmgoET7wMHdSqUka2hasVN4e5yfHD05YwGjsAtCseewJh/BMw==
 
-"@types/plotly.js@2.12.29":
-  version "2.12.29"
-  resolved "https://registry.yarnpkg.com/@types/plotly.js/-/plotly.js-2.12.29.tgz#ae16313ada6f644860f56377151cf22a6ce4c906"
-  integrity sha512-eaZGh/DFrjBKE6FnWT/CU2Hx1CQ9hT01LvVpiHHB20iVOLmgM5qPV74y08JrM4VjyF7Gx7hAx91dxusqQzE+nQ==
+"@types/plotly.js@2.12.31":
+  version "2.12.31"
+  resolved "https://registry.yarnpkg.com/@types/plotly.js/-/plotly.js-2.12.31.tgz#fb4651bdd819baf746bd0a793dd4de35e30d0ccd"
+  integrity sha512-FmzZQquzgTnQnywzyg7zlTTD4UFOroJ6/ac2KAueLCMQF7c+dwjZxgRohHB7Qzz0dZpFgic0VSkC2re7j6oluQ==
 
 "@types/prettier@^2.1.5":
   version "2.7.3"
