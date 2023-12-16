@@ -1,7 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:base", "group:allNonMajor"],
-  "schedule": ["before 3am on Saturday"],
+  "extends": ["config:base"],
   "reviewers": ["rparini"],
   "automerge": true,
   "automergeStrategy": "squash",
