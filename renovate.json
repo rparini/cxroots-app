@@ -1,6 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:base"],
+  "extends": ["group:allNonMajor", "config:base"],
   "reviewers": ["rparini"],
   "automerge": true,
   "automergeStrategy": "squash",
