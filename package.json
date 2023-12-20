@@ -10,7 +10,7 @@
     "@mui/lab": "5.0.0-alpha.157",
     "@mui/material": "5.15.1",
     "katex": "0.16.9",
-    "mathjs": "12.2.0",
+    "mathjs": "12.2.1",
     "nerdamer": "1.1.13",
     "plotly.js": "2.27.1",
     "react": "18.2.0",
