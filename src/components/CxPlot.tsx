@@ -70,6 +70,7 @@ export function CxPlot({
   };
 
   return (
+    // @ts-ignore
     <Plot
       data={data}
       useResizeHandler={true}
