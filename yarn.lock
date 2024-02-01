@@ -1200,13 +1200,6 @@
   dependencies:
     regenerator-runtime "^0.13.11"
 
-"@babel/runtime@^7.23.8":
-  version "7.23.8"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.23.8.tgz#8ee6fe1ac47add7122902f257b8ddf55c898f650"
-  integrity sha512-Y7KbAP984rn1VGMbGqKmBLio9V7y5Je9GvU4rQPCPinCyNfUcToxIXl06d59URp/F3LwinvODxab5N/G6qggkw==
-  dependencies:
-    regenerator-runtime "^0.14.0"
-
 "@babel/runtime@^7.23.9":
   version "7.23.9"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.23.9.tgz#47791a15e4603bb5f905bc0753801cf21d6345f7"
@@ -7749,12 +7742,12 @@ math-log2@^1.0.1:
   resolved "https://registry.yarnpkg.com/math-log2/-/math-log2-1.0.1.tgz#fb8941be5f5ebe8979e718e6273b178e58694565"
   integrity sha512-9W0yGtkaMAkf74XGYVy4Dqw3YUMnTNB2eeiw9aQbUl4A3KmuCEHTt2DgAB07ENzOYAjsYSAYufkAq0Zd+jU7zA==
 
-mathjs@12.3.0:
-  version "12.3.0"
-  resolved "https://registry.yarnpkg.com/mathjs/-/mathjs-12.3.0.tgz#83fea1983325a47d711cca7c13317381597f4c8e"
-  integrity sha512-Mik+O8gbH14/1V2D/vdJNgu+qGXpF+2oeBJVBqN8nbOdZNuu4Nxw6aDbJ0QOkDSq/9bQ+AZpXoIxBuErRODS8w==
+mathjs@12.3.1:
+  version "12.3.1"
+  resolved "https://registry.yarnpkg.com/mathjs/-/mathjs-12.3.1.tgz#afbdde32cd6026b8aa3bb303538be06d82b36e11"
+  integrity sha512-Z8G8Cunz97rV32eghW/twFFSY/dmU2eswnh6cAkcQMbbEUUpaweF0li435GkZjRS+G52VYotN+vLx3VTYBf5WA==
   dependencies:
-    "@babel/runtime" "^7.23.8"
+    "@babel/runtime" "^7.23.9"
     complex.js "^2.1.1"
     decimal.js "^10.4.3"
     escape-latex "^1.2.0"
