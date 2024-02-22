@@ -7747,10 +7747,10 @@ math-log2@^1.0.1:
   resolved "https://registry.yarnpkg.com/math-log2/-/math-log2-1.0.1.tgz#fb8941be5f5ebe8979e718e6273b178e58694565"
   integrity sha512-9W0yGtkaMAkf74XGYVy4Dqw3YUMnTNB2eeiw9aQbUl4A3KmuCEHTt2DgAB07ENzOYAjsYSAYufkAq0Zd+jU7zA==
 
-mathjs@12.3.2:
-  version "12.3.2"
-  resolved "https://registry.yarnpkg.com/mathjs/-/mathjs-12.3.2.tgz#cd0ccea32c36e708417736dc9cd6ccaec2ca9fb2"
-  integrity sha512-o+HwBVD71MHdYpdScDd6CEcdd6CJOF2eXQJE0kNuIkfTjffPyqoeYdYkzVqimTUr1YgIQkNbL8MakHCZ2Ml7mg==
+mathjs@12.4.0:
+  version "12.4.0"
+  resolved "https://registry.yarnpkg.com/mathjs/-/mathjs-12.4.0.tgz#875c2ec19e5be69885b29769f78bbb37220322b6"
+  integrity sha512-4Moy0RNjwMSajEkGGxNUyMMC/CZAcl87WBopvNsJWB4E4EFebpTedr+0/rhqmnOSTH3Wu/3WfiWiw6mqiaHxVw==
   dependencies:
     "@babel/runtime" "^7.23.9"
     complex.js "^2.1.1"
