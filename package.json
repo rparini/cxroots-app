@@ -12,7 +12,7 @@
     "katex": "0.16.9",
     "mathjs": "12.4.0",
     "nerdamer": "1.1.13",
-    "plotly.js": "2.29.1",
+    "plotly.js": "2.30.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-plotly.js": "2.6.0"
@@ -56,6 +56,6 @@
     "jest-canvas-mock": "2.5.2",
     "prettier": "3.2.5",
     "react-scripts": "5.0.1",
-    "typescript": "5.3.3"
+    "typescript": "5.4.2"
   }
 }
