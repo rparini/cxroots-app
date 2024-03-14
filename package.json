@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "homepage": "https://rparini.github.io/cxroots-app",
   "private": true,
+  "engines": {
+    "node": "20.11.1"
+    "yarn": "1.22.19"
+  },
   "dependencies": {
     "@emotion/react": "11.11.4",
     "@emotion/styled": "11.11.0",
