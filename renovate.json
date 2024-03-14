@@ -5,6 +5,11 @@
   "automerge": true,
   "automergeStrategy": "squash",
   "separateMinorPatch": true,
+  "transitiveRemediation": true,
+  "vulnerabilityAlerts": {
+    "enabled": true,
+    "labels": ["security"]
+  },
   "pre-commit": {
     "enabled": true
   },
