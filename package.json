@@ -12,7 +12,7 @@
     "katex": "0.16.9",
     "mathjs": "12.4.1",
     "nerdamer": "1.1.13",
-    "plotly.js": "2.30.0",
+    "plotly.js": "2.30.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-plotly.js": "2.6.0"
