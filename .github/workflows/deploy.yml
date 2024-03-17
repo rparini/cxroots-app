@@ -30,7 +30,7 @@ jobs:
       - name: Set yarn version
         run: yarn set version $(jq -r '.engines.yarn' package.json)
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: yarn install --immutable
       - name: Build app
         run: yarn run build
       - name: Setup Pages

@@ -23,7 +23,7 @@ corepack enable
 and then install the packages needed to build the application
 
 ```
-yarn install --frozen-lockfile
+yarn install --immutable
 ```
 
 You can then start a local server with
