@@ -4,7 +4,6 @@
   "reviewers": ["rparini"],
   "automerge": true,
   "automergeStrategy": "squash",
-  "separateMinorPatch": true,
   "transitiveRemediation": true,
   "vulnerabilityAlerts": {
     "enabled": true,
