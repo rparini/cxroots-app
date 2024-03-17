@@ -4,6 +4,7 @@
   "reviewers": ["rparini"],
   "automerge": true,
   "automergeStrategy": "squash",
+  "lockFileMaintenance": { "enabled": true },
   "transitiveRemediation": true,
   "vulnerabilityAlerts": {
     "enabled": true,
