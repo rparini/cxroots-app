@@ -21,10 +21,11 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version-file: .nvmrc
+      - run: corepack enable
       - name: Set yarn version
         run: yarn set version $(jq -r '.engines.yarn' package.json)
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: yarn install --immutable
       - name: Build app
         run: yarn build
   test:
@@ -35,12 +36,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version-file: .nvmrc
+      - run: corepack enable
       - name: Set yarn version
         run: yarn set version $(jq -r '.engines.yarn' package.json)
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: yarn install --immutable
       - name: Run tests
-        run: yarn test -- --coverage
+        run: yarn test --coverage
       - name: Upload coverage to Coveralls
         uses: coverallsapp/github-action@master
         with:
