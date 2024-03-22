@@ -2,6 +2,7 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["group:allNonMajor", "config:base"],
   "reviewers": ["rparini"],
+  "schedule": ["before 5am on Saturday"],
   "automerge": true,
   "automergeStrategy": "squash",
   "lockFileMaintenance": { "enabled": true },
