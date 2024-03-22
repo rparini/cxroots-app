@@ -3,15 +3,15 @@
 
 version: 2
 updates:
-  - package-ecosystem: "yarn"
+  - package-ecosystem: "npm"
     directory: "/"
     schedule:
       interval: "weekly"
-    reviewers: 
+    reviewers:
       - "rparini"
   - package-ecosystem: "github-actions"
     directory: "/.github/workflows"
     schedule:
       interval: "weekly"
-    reviewers: 
+    reviewers:
       - "rparini"
