@@ -6,5 +6,8 @@ node_modules
 .eslintcache
 *.swp
 
+# yarn
+.yarn/install-state.gz
+
 # test artifacts
 coverage
