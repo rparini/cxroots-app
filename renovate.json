@@ -5,7 +5,6 @@
   "schedule": ["before 5am on Saturday"],
   "automerge": true,
   "automergeStrategy": "squash",
-  "lockFileMaintenance": { "enabled": true },
   "transitiveRemediation": true,
   "vulnerabilityAlerts": {
     "enabled": true,
