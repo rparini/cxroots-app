@@ -1594,12 +1594,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.11.2, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.16.3, @babel/runtime@npm:^7.18.3, @babel/runtime@npm:^7.23.2, @babel/runtime@npm:^7.23.9, @babel/runtime@npm:^7.24.0, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.8.7, @babel/runtime@npm:^7.9.2":
+"@babel/runtime@npm:^7.11.2, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.16.3, @babel/runtime@npm:^7.18.3, @babel/runtime@npm:^7.23.2, @babel/runtime@npm:^7.23.9, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.8.7, @babel/runtime@npm:^7.9.2":
   version: 7.24.1
   resolution: "@babel/runtime@npm:7.24.1"
   dependencies:
     regenerator-runtime: "npm:^0.14.0"
   checksum: 10c0/500c6a99ddd84f37c7bc5dbc84777af47b1372b20e879941670451d55484faf18a673c5ebee9ca2b0f36208a729417873b35b1b92e76f811620f6adf7b8cb0f1
+  languageName: node
+  linkType: hard
+
+"@babel/runtime@npm:^7.24.4":
+  version: 7.24.4
+  resolution: "@babel/runtime@npm:7.24.4"
+  dependencies:
+    regenerator-runtime: "npm:^0.14.0"
+  checksum: 10c0/785aff96a3aa8ff97f90958e1e8a7b1d47f793b204b47c6455eaadc3f694f48c97cd5c0a921fe3596d818e71f18106610a164fb0f1c71fd68c622a58269d537c
   languageName: node
   linkType: hard
 
@@ -6113,9 +6122,9 @@ __metadata:
     gh-pages: "npm:6.1.1"
     jest-canvas-mock: "npm:2.5.2"
     katex: "npm:0.16.10"
-    mathjs: "npm:12.4.1"
+    mathjs: "npm:12.4.2"
     nerdamer: "npm:1.1.13"
-    plotly.js: "npm:2.31.1"
+    plotly.js: "npm:2.32.0"
     prettier: "npm:3.2.5"
     react: "npm:18.2.0"
     react-dom: "npm:18.2.0"
@@ -8250,9 +8259,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gl-text@npm:^1.3.1":
-  version: 1.3.1
-  resolution: "gl-text@npm:1.3.1"
+"gl-text@npm:^1.4.0":
+  version: 1.4.0
+  resolution: "gl-text@npm:1.4.0"
   dependencies:
     bit-twiddle: "npm:^1.0.2"
     color-normalize: "npm:^1.5.0"
@@ -8271,7 +8280,7 @@ __metadata:
     regl: "npm:^2.0.0"
     to-px: "npm:^1.0.1"
     typedarray-pool: "npm:^1.1.0"
-  checksum: 10c0/2bffa1cf6264d6211b7dcc8da7016850d985b4d46d8bba1f38edbdbf379b5f150610ff9449ef9561c274d07f34659bd66ab8dc2e3470c2e59a697cc29a6acc9b
+  checksum: 10c0/bb694f69bd6b8c6186482990c12a3d07c54fc92d7c13623ca3cffd3c564045336e7db00d638623517dbd1678cf25986515f6db8f8a984b119867c60bfab6069d
   languageName: node
   linkType: hard
 
@@ -10842,11 +10851,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mathjs@npm:12.4.1":
-  version: 12.4.1
-  resolution: "mathjs@npm:12.4.1"
+"mathjs@npm:12.4.2":
+  version: 12.4.2
+  resolution: "mathjs@npm:12.4.2"
   dependencies:
-    "@babel/runtime": "npm:^7.24.0"
+    "@babel/runtime": "npm:^7.24.4"
     complex.js: "npm:^2.1.1"
     decimal.js: "npm:^10.4.3"
     escape-latex: "npm:^1.2.0"
@@ -10857,7 +10866,7 @@ __metadata:
     typed-function: "npm:^4.1.1"
   bin:
     mathjs: bin/cli.js
-  checksum: 10c0/a894344101723eb58a625d0cfe702319794a60fb0661e45460909b65791ab59d6a4e021353b30d4eb6394c9d58b39af5a4ea63c938ae47bb110046182c1aaaac
+  checksum: 10c0/78a8e2897bd50cfbfcabd34b3fc51ab3bde6205493fbf3a390784b69399fbc8ec46df6696c798dda780c848fd6363068d6ba414092eeaf0cc1b1bec6984d735b
   languageName: node
   linkType: hard
 
@@ -11951,9 +11960,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"plotly.js@npm:2.31.1":
-  version: 2.31.1
-  resolution: "plotly.js@npm:2.31.1"
+"plotly.js@npm:2.32.0":
+  version: 2.32.0
+  resolution: "plotly.js@npm:2.32.0"
   dependencies:
     "@plotly/d3": "npm:3.8.1"
     "@plotly/d3-sankey": "npm:0.7.2"
@@ -11979,7 +11988,7 @@ __metadata:
     d3-time-format: "npm:^2.2.3"
     fast-isnumeric: "npm:^1.1.4"
     gl-mat4: "npm:^1.2.0"
-    gl-text: "npm:^1.3.1"
+    gl-text: "npm:^1.4.0"
     has-hover: "npm:^1.0.1"
     has-passive-events: "npm:^1.0.0"
     is-mobile: "npm:^4.0.0"
@@ -12004,7 +12013,7 @@ __metadata:
     topojson-client: "npm:^3.1.0"
     webgl-context: "npm:^2.2.0"
     world-calendars: "npm:^1.0.3"
-  checksum: 10c0/b594715b6b6af006bfc0a744305250edda1c363facdcca357c7890d343ef86394ae06abbfbd7c63c5be4334ee11b4e58ebc9152cbf72b7d95b134a100550d91b
+  checksum: 10c0/f013b3a95788c205c73b0975ef97892123b41d8814c49175790ae40714287d39cd498be42af2059ea6f72948f4be056b8cd44c32e7915532db2d313f3359bad7
   languageName: node
   linkType: hard
 
