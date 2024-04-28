@@ -22,6 +22,26 @@
     "react-dom": "18.3.1",
     "react-plotly.js": "2.6.0"
   },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "7.21.11",
+    "@testing-library/jest-dom": "6.4.2",
+    "@testing-library/react": "15.0.5",
+    "@testing-library/user-event": "14.5.2",
+    "@types/jest": "29.5.12",
+    "@types/plotly.js": "2.29.2",
+    "@types/react": "18.3.1",
+    "@types/react-dom": "18.3.0",
+    "@types/react-plotly.js": "2.6.3",
+    "gh-pages": "6.1.1",
+    "jest-canvas-mock": "2.5.2",
+    "prettier": "3.2.5",
+    "react-scripts": "5.0.1",
+    "typescript": "5.4.5"
+  },
+  "resolutions": {
+    "nth-check@npm:^1.0.2": "2.0.1",
+    "postcss@npm:^7.0.35": "8.4.31"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -47,21 +67,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "7.21.11",
-    "@testing-library/jest-dom": "6.4.2",
-    "@testing-library/react": "15.0.5",
-    "@testing-library/user-event": "14.5.2",
-    "@types/jest": "29.5.12",
-    "@types/plotly.js": "2.29.2",
-    "@types/react": "18.3.1",
-    "@types/react-dom": "18.3.0",
-    "@types/react-plotly.js": "2.6.3",
-    "gh-pages": "6.1.1",
-    "jest-canvas-mock": "2.5.2",
-    "prettier": "3.2.5",
-    "react-scripts": "5.0.1",
-    "typescript": "5.4.5"
   }
 }
