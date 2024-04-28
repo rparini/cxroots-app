@@ -39,7 +39,8 @@
     "typescript": "5.4.5"
   },
   "resolutions": {
-    "nth-check@npm:^1.0.2": "2.0.1"
+    "nth-check@npm:^1.0.2": "2.0.1",
+    "postcss@npm:^7.0.35": "8.4.31"
   },
   "scripts": {
     "start": "react-scripts start",
