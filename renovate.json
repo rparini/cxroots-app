@@ -19,6 +19,7 @@
       "groupName": "prettier"
     },
     {
+      "description": "https://github.com/rparini/cxroots-app/issues/220",
       "matchDepNames": ["mathjax"],
       "allowedVersions": "<3"
     }
