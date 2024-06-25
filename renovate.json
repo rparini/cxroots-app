@@ -17,6 +17,10 @@
     {
       "matchPackagePatterns": "prettier",
       "groupName": "prettier"
+    },
+    {
+      "matchPackageNames": ["mathjax"],
+      "allowedVersions": "<3"
     }
   ]
 }
