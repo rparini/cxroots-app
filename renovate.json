@@ -19,7 +19,7 @@
       "groupName": "prettier"
     },
     {
-      "matchPackageNames": ["mathjax"],
+      "matchDepNames": ["mathjax"],
       "allowedVersions": "<3"
     }
   ]
