@@ -6158,8 +6158,8 @@ __metadata:
     "@types/react-plotly.js": "npm:2.6.3"
     gh-pages: "npm:6.1.1"
     jest-canvas-mock: "npm:2.5.2"
-    katex: "npm:0.16.10"
-    mathjs: "npm:13.0.1"
+    katex: "npm:0.16.11"
+    mathjs: "npm:13.0.2"
     nerdamer: "npm:1.1.13"
     plotly.js: "npm:2.33.0"
     prettier: "npm:3.3.2"
@@ -6167,7 +6167,7 @@ __metadata:
     react-dom: "npm:18.3.1"
     react-plotly.js: "npm:2.6.0"
     react-scripts: "npm:5.0.1"
-    typescript: "npm:5.5.2"
+    typescript: "npm:5.5.3"
   languageName: unknown
   linkType: soft
 
@@ -10539,14 +10539,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"katex@npm:0.16.10":
-  version: 0.16.10
-  resolution: "katex@npm:0.16.10"
+"katex@npm:0.16.11":
+  version: 0.16.11
+  resolution: "katex@npm:0.16.11"
   dependencies:
     commander: "npm:^8.3.0"
   bin:
     katex: cli.js
-  checksum: 10c0/b465213157e5245bbb31ff6563c33ae81807c06d6f2246325b3a2397497e8929a34eebbb262f5e0991ec00fbc0cc85f388246e6dfc38ec86c28d3e481cb70afa
+  checksum: 10c0/be405d45d7228bbfeecd491e0f74d9da0066b5e7b457e3f1dc833de5b63f9e98e40d2ef6b46e1cbe577490a43338c043851da032c45aeec0cc03ad431ef6fd83
   languageName: node
   linkType: hard
 
@@ -10881,9 +10881,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mathjs@npm:13.0.1":
-  version: 13.0.1
-  resolution: "mathjs@npm:13.0.1"
+"mathjs@npm:13.0.2":
+  version: 13.0.2
+  resolution: "mathjs@npm:13.0.2"
   dependencies:
     "@babel/runtime": "npm:^7.24.7"
     complex.js: "npm:^2.1.1"
@@ -10896,7 +10896,7 @@ __metadata:
     typed-function: "npm:^4.2.1"
   bin:
     mathjs: bin/cli.js
-  checksum: 10c0/0babc12a85070e04d452d978025d9a6686df3386043d4dc527c272f4bc24deda405a980cfc3e67dee882f40f87016141885a4f88e778eb24ce25b4ad54d1e8c6
+  checksum: 10c0/0ad3bed3423b064a338fb7248290f9cc63d8f0b97762c3154ceb600c3af752eb9804c5bd170fa0dcad944032a2be21caf38765edffded0263792cd4ff9f4b2d2
   languageName: node
   linkType: hard
 
@@ -15429,23 +15429,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:5.5.2":
-  version: 5.5.2
-  resolution: "typescript@npm:5.5.2"
+"typescript@npm:5.5.3":
+  version: 5.5.3
+  resolution: "typescript@npm:5.5.3"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 10c0/8ca39b27b5f9bd7f32db795045933ab5247897660627251e8254180b792a395bf061ea7231947d5d7ffa5cb4cc771970fd4ef543275f9b559f08c9325cccfce3
+  checksum: 10c0/f52c71ccbc7080b034b9d3b72051d563601a4815bf3e39ded188e6ce60813f75dbedf11ad15dd4d32a12996a9ed8c7155b46c93a9b9c9bad1049766fe614bbdd
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A5.5.2#optional!builtin<compat/typescript>":
-  version: 5.5.2
-  resolution: "typescript@patch:typescript@npm%3A5.5.2#optional!builtin<compat/typescript>::version=5.5.2&hash=379a07"
+"typescript@patch:typescript@npm%3A5.5.3#optional!builtin<compat/typescript>":
+  version: 5.5.3
+  resolution: "typescript@patch:typescript@npm%3A5.5.3#optional!builtin<compat/typescript>::version=5.5.3&hash=379a07"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 10c0/a7b7ede75dc7fc32a76d0d0af6b91f5fbd8620890d84c906f663d8783bf3de6d7bd50f0430b8bb55eac88a38934af847ff709e7156e5138b95ae94cbd5f73e5b
+  checksum: 10c0/911c7811d61f57f07df79c4a35f56a0f426a65426a020e5fcd792f66559f399017205f5f10255329ab5a3d8c2d1f1d19530aeceffda70758a521fae1d469432e
   languageName: node
   linkType: hard
 
