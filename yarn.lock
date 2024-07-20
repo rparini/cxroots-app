@@ -1609,12 +1609,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.24.7":
-  version: 7.24.7
-  resolution: "@babel/runtime@npm:7.24.7"
+"@babel/runtime@npm:^7.24.8":
+  version: 7.24.8
+  resolution: "@babel/runtime@npm:7.24.8"
   dependencies:
     regenerator-runtime: "npm:^0.14.0"
-  checksum: 10c0/b6fa3ec61a53402f3c1d75f4d808f48b35e0dfae0ec8e2bb5c6fc79fb95935da75766e0ca534d0f1c84871f6ae0d2ebdd950727cfadb745a2cdbef13faef5513
+  checksum: 10c0/f24b30af6b3ecae19165b3b032f9bc37b2d1769677bd63b69a6f81061967cfc847aa822518402ea6616b1d301d7eb46986b99c9f69cdb5880834fca2e6b34881
   languageName: node
   linkType: hard
 
@@ -3688,10 +3688,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/plotly.js@npm:2.29.5":
-  version: 2.29.5
-  resolution: "@types/plotly.js@npm:2.29.5"
-  checksum: 10c0/a0673916fc63fabe8a054f63b331ef391617e04c611d08dda4746f964c2a97c1d02787a54894b58f51ae499a15e52aaafc14dbc148fb8bd4badcf2d34514f23f
+"@types/plotly.js@npm:2.33.1":
+  version: 2.33.1
+  resolution: "@types/plotly.js@npm:2.33.1"
+  checksum: 10c0/9778d8d03a34cac77102948d7d0538bdd4ad777a80b69d452dcc52acb205cdb5b2725a99bad250c4a5e4d84bcc74f55891efacf0a9fd3958e4296fa75a57d13d
   languageName: node
   linkType: hard
 
@@ -6204,16 +6204,16 @@ __metadata:
     "@testing-library/react": "npm:16.0.0"
     "@testing-library/user-event": "npm:14.5.2"
     "@types/jest": "npm:29.5.12"
-    "@types/plotly.js": "npm:2.29.5"
+    "@types/plotly.js": "npm:2.33.1"
     "@types/react": "npm:18.3.3"
     "@types/react-dom": "npm:18.3.0"
     "@types/react-plotly.js": "npm:2.6.3"
     gh-pages: "npm:6.1.1"
     jest-canvas-mock: "npm:2.5.2"
     katex: "npm:0.16.11"
-    mathjs: "npm:13.0.2"
+    mathjs: "npm:13.0.3"
     nerdamer: "npm:1.1.13"
-    plotly.js: "npm:2.33.0"
+    plotly.js: "npm:2.34.0"
     prettier: "npm:3.3.3"
     react: "npm:18.3.1"
     react-dom: "npm:18.3.1"
@@ -10933,11 +10933,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mathjs@npm:13.0.2":
-  version: 13.0.2
-  resolution: "mathjs@npm:13.0.2"
+"mathjs@npm:13.0.3":
+  version: 13.0.3
+  resolution: "mathjs@npm:13.0.3"
   dependencies:
-    "@babel/runtime": "npm:^7.24.7"
+    "@babel/runtime": "npm:^7.24.8"
     complex.js: "npm:^2.1.1"
     decimal.js: "npm:^10.4.3"
     escape-latex: "npm:^1.2.0"
@@ -10948,7 +10948,7 @@ __metadata:
     typed-function: "npm:^4.2.1"
   bin:
     mathjs: bin/cli.js
-  checksum: 10c0/0ad3bed3423b064a338fb7248290f9cc63d8f0b97762c3154ceb600c3af752eb9804c5bd170fa0dcad944032a2be21caf38765edffded0263792cd4ff9f4b2d2
+  checksum: 10c0/ad270e980bf5d63b890e1d415bab50d2e68c561e4fb96f62a4ad75043af601475e10dd13fba2a6287b0cfda6cc8f6adfa84969e0e090a073bdd5849bedfa236a
   languageName: node
   linkType: hard
 
@@ -12035,9 +12035,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"plotly.js@npm:2.33.0":
-  version: 2.33.0
-  resolution: "plotly.js@npm:2.33.0"
+"plotly.js@npm:2.34.0":
+  version: 2.34.0
+  resolution: "plotly.js@npm:2.34.0"
   dependencies:
     "@plotly/d3": "npm:3.8.2"
     "@plotly/d3-sankey": "npm:0.7.2"
@@ -12088,7 +12088,7 @@ __metadata:
     topojson-client: "npm:^3.1.0"
     webgl-context: "npm:^2.2.0"
     world-calendars: "npm:^1.0.3"
-  checksum: 10c0/eaea98e342c47ff00ec37b640cbfba82e5718bceaf04839f3437b8890bd2f7af53e8433112af70c76080fa05b65b6835626f1b2ba8ba68cc873d4f2d7cbbe791
+  checksum: 10c0/643a6fad1ea1247f0a6ce17828ca47cbb29f6c53b943120c93eb93895b7db09493e35f1001abaf29d9fb5c062627a63c1dc11121cc35ec4ec4f9631d993a0801
   languageName: node
   linkType: hard
 
