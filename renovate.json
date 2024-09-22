@@ -1,22 +1,13 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "group:allNonMajor",
-    "config:best-practices"
-  ],
-  "reviewers": [
-    "rparini"
-  ],
-  "schedule": [
-    "before 5am on Saturday"
-  ],
+  "extends": ["group:allNonMajor", "config:best-practices"],
+  "reviewers": ["rparini"],
+  "schedule": ["before 5am on Saturday"],
   "automerge": true,
   "automergeStrategy": "squash",
   "vulnerabilityAlerts": {
     "enabled": true,
-    "labels": [
-      "security"
-    ]
+    "labels": ["security"]
   },
   "pre-commit": {
     "enabled": true
@@ -24,15 +15,11 @@
   "packageRules": [
     {
       "groupName": "prettier",
-      "matchPackageNames": [
-        "/prettier/"
-      ]
+      "matchPackageNames": ["/prettier/"]
     },
     {
       "description": "https://github.com/rparini/cxroots-app/issues/220",
-      "matchDepNames": [
-        "mathjax"
-      ],
+      "matchDepNames": ["mathjax"],
       "allowedVersions": "<3"
     }
   ]
