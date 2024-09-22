@@ -5,7 +5,6 @@
   "schedule": ["before 5am on Saturday"],
   "automerge": true,
   "automergeStrategy": "squash",
-  "transitiveRemediation": true,
   "vulnerabilityAlerts": {
     "enabled": true,
     "labels": ["security"]
@@ -15,8 +14,8 @@
   },
   "packageRules": [
     {
-      "matchPackagePatterns": "prettier",
-      "groupName": "prettier"
+      "groupName": "prettier",
+      "matchPackageNames": ["/prettier/"]
     },
     {
       "description": "https://github.com/rparini/cxroots-app/issues/220",
