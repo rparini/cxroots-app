@@ -4,7 +4,7 @@
   "homepage": "https://rparini.github.io/cxroots-app",
   "private": true,
   "engines": {
-    "node": "20.17.0",
+    "node": "20.18.0",
     "yarn": "4.5.0"
   },
   "packageManager": "yarn@4.5.0",
@@ -15,7 +15,7 @@
     "@mui/lab": "5.0.0-alpha.173",
     "@mui/material": "6.1.2",
     "katex": "0.16.11",
-    "mathjs": "13.1.1",
+    "mathjs": "13.2.0",
     "nerdamer": "1.1.13",
     "plotly.js": "2.35.2",
     "react": "18.3.1",
