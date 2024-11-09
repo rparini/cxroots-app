@@ -1609,16 +1609,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.25.6":
-  version: 7.25.6
-  resolution: "@babel/runtime@npm:7.25.6"
-  dependencies:
-    regenerator-runtime: "npm:^0.14.0"
-  checksum: 10c0/d6143adf5aa1ce79ed374e33fdfd74fa975055a80bc6e479672ab1eadc4e4bfd7484444e17dd063a1d180e051f3ec62b357c7a2b817e7657687b47313158c3d2
-  languageName: node
-  linkType: hard
-
-"@babel/runtime@npm:^7.26.0":
+"@babel/runtime@npm:^7.25.7, @babel/runtime@npm:^7.26.0":
   version: 7.26.0
   resolution: "@babel/runtime@npm:7.26.0"
   dependencies:
@@ -5843,10 +5834,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"complex.js@npm:^2.1.1":
-  version: 2.1.1
-  resolution: "complex.js@npm:2.1.1"
-  checksum: 10c0/c5dbb83954b472cf7fb1aebf8d140a7eb85a00b73eeb2b4ee4d192f98f038f3800f54550747b85be1114fedcbefebb2ade709b17b3cd40ab2bd546cb8fe9121c
+"complex.js@npm:^2.2.5":
+  version: 2.4.2
+  resolution: "complex.js@npm:2.4.2"
+  checksum: 10c0/c78cca0a3c08fa48845e2703b9772bdd80d44e56728382d43879183cb23391da6e8b6326ceec23c685abfd529b61d34842ba1784d7fa3783b194fbc6d0850d7c
   languageName: node
   linkType: hard
 
@@ -6435,7 +6426,7 @@ __metadata:
     gh-pages: "npm:6.2.0"
     jest-canvas-mock: "npm:2.5.2"
     katex: "npm:0.16.11"
-    mathjs: "npm:13.2.0"
+    mathjs: "npm:13.2.1"
     nerdamer: "npm:1.1.13"
     plotly.js: "npm:2.35.2"
     prettier: "npm:3.3.3"
@@ -11289,12 +11280,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mathjs@npm:13.2.0":
-  version: 13.2.0
-  resolution: "mathjs@npm:13.2.0"
+"mathjs@npm:13.2.1":
+  version: 13.2.1
+  resolution: "mathjs@npm:13.2.1"
   dependencies:
-    "@babel/runtime": "npm:^7.25.6"
-    complex.js: "npm:^2.1.1"
+    "@babel/runtime": "npm:^7.25.7"
+    complex.js: "npm:^2.2.5"
     decimal.js: "npm:^10.4.3"
     escape-latex: "npm:^1.2.0"
     fraction.js: "npm:^4.3.7"
@@ -11304,7 +11295,7 @@ __metadata:
     typed-function: "npm:^4.2.1"
   bin:
     mathjs: bin/cli.js
-  checksum: 10c0/75a3f7ff8e401f86ac3b9ca9b67961e062dba94a0fb68a989ef234e932516451fbf63e70a17f504616cdb6c888697826395e028c851907c7ef3e357750714ffc
+  checksum: 10c0/11443c47a27f3a141c1c0153fd447f9426a9ce94aa250ed9f2b4380685240f4d8610f42a99910a19b03a6ab91fc213d01457571d36da65def757b8cf397465e7
   languageName: node
   linkType: hard
 
