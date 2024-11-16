@@ -3846,10 +3846,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/plotly.js@npm:2.33.5":
-  version: 2.33.5
-  resolution: "@types/plotly.js@npm:2.33.5"
-  checksum: 10c0/b1ef820ecbdeeacf1306c30b6d85b54d8612435974096a0aa79b3a688615ba40caf12e3889753631068abcf687825aed13ce77e8205eb697365a13e1921cfd83
+"@types/plotly.js@npm:2.35.0":
+  version: 2.35.0
+  resolution: "@types/plotly.js@npm:2.35.0"
+  checksum: 10c0/f17e97fc7b5e2c940762171ab8f4993b1a1da1707d59fd0a45bedaa607b91da2accc5978ae73b5bd9ace521e0786dbbfedb6788b2aaa49966fed4b05e0dbae96
   languageName: node
   linkType: hard
 
@@ -6419,14 +6419,14 @@ __metadata:
     "@testing-library/react": "npm:16.0.1"
     "@testing-library/user-event": "npm:14.5.2"
     "@types/jest": "npm:29.5.14"
-    "@types/plotly.js": "npm:2.33.5"
+    "@types/plotly.js": "npm:2.35.0"
     "@types/react": "npm:18.3.12"
     "@types/react-dom": "npm:18.3.1"
     "@types/react-plotly.js": "npm:2.6.3"
     gh-pages: "npm:6.2.0"
     jest-canvas-mock: "npm:2.5.2"
     katex: "npm:0.16.11"
-    mathjs: "npm:13.2.1"
+    mathjs: "npm:13.2.2"
     nerdamer: "npm:1.1.13"
     plotly.js: "npm:2.35.2"
     prettier: "npm:3.3.3"
@@ -11280,9 +11280,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mathjs@npm:13.2.1":
-  version: 13.2.1
-  resolution: "mathjs@npm:13.2.1"
+"mathjs@npm:13.2.2":
+  version: 13.2.2
+  resolution: "mathjs@npm:13.2.2"
   dependencies:
     "@babel/runtime": "npm:^7.25.7"
     complex.js: "npm:^2.2.5"
@@ -11295,7 +11295,7 @@ __metadata:
     typed-function: "npm:^4.2.1"
   bin:
     mathjs: bin/cli.js
-  checksum: 10c0/11443c47a27f3a141c1c0153fd447f9426a9ce94aa250ed9f2b4380685240f4d8610f42a99910a19b03a6ab91fc213d01457571d36da65def757b8cf397465e7
+  checksum: 10c0/1726dc312a29cb1ad2ab06c956d92e18460fbe71bd1f7bcd278c14fd04d40ecf0ee02a51ffe4269c114e1ad4e3a93b9d4092f2f118b59d014c5a6311a28da519
   languageName: node
   linkType: hard
 
