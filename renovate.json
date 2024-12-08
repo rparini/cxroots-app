@@ -2,13 +2,9 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["group:allNonMajor", "config:best-practices"],
   "reviewers": ["rparini"],
-  "schedule": ["before 5am on Saturday"],
+  "schedule": ["every weekend"],
   "automerge": true,
   "automergeStrategy": "squash",
-  "vulnerabilityAlerts": {
-    "enabled": true,
-    "labels": ["security"]
-  },
   "pre-commit": {
     "enabled": true
   },
