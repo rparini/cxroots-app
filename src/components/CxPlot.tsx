@@ -10,7 +10,7 @@ export type Contour = {
 };
 
 export function CxPlot({
-  functionText ,
+  functionText,
   roots,
   multiplicities,
   contour,
