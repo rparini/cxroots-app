@@ -3,7 +3,7 @@ name: Format code
 on:
   push:
     branches:
-      - "renovate/.*prettier.*"
+      - "renovate.*prettier.*"
 
 jobs:
   run-prettier:
