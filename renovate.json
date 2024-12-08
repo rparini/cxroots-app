@@ -5,6 +5,7 @@
   "schedule": ["every weekend"],
   "automerge": true,
   "automergeStrategy": "squash",
+  "gitIgnoredAuthors": ["renovate[bot]@users.noreply.github.com"],
   "pre-commit": {
     "enabled": true
   },
