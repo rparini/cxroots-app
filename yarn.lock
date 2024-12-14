@@ -6560,7 +6560,7 @@ __metadata:
     katex: "npm:0.16.15"
     mathjs: "npm:14.0.1"
     nerdamer: "npm:1.1.13"
-    plotly.js: "npm:2.35.2"
+    plotly.js: "npm:2.35.3"
     prettier: "npm:3.4.2"
     react: "npm:19.0.0"
     react-dom: "npm:19.0.0"
@@ -12526,9 +12526,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"plotly.js@npm:2.35.2":
-  version: 2.35.2
-  resolution: "plotly.js@npm:2.35.2"
+"plotly.js@npm:2.35.3":
+  version: 2.35.3
+  resolution: "plotly.js@npm:2.35.3"
   dependencies:
     "@plotly/d3": "npm:3.8.2"
     "@plotly/d3-sankey": "npm:0.7.2"
@@ -12582,7 +12582,7 @@ __metadata:
     topojson-client: "npm:^3.1.0"
     webgl-context: "npm:^2.2.0"
     world-calendars: "npm:^1.0.3"
-  checksum: 10c0/d44e3245b209c2771dd56e036501ad1e629cf54a059fa5071176b95d790f7d95be083faafc8dabb7ff49454bc6ec05de6d3c9b74161d21a668c544707e942f06
+  checksum: 10c0/380a1b457a2ee4619c197e9ff4419675e0840a8ecdb4c85ee4cb18f1930cc32681e80474a432698986094e7373e4525e8b1cc6f78bd94d1221ea275483b6d774
   languageName: node
   linkType: hard
 
