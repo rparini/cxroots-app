@@ -6570,7 +6570,7 @@ __metadata:
     "@types/react-plotly.js": "npm:2.6.3"
     gh-pages: "npm:6.2.0"
     jest-canvas-mock: "npm:2.5.2"
-    katex: "npm:0.16.15"
+    katex: "npm:0.16.18"
     mathjs: "npm:14.0.1"
     nerdamer: "npm:1.1.13"
     plotly.js: "npm:2.35.3"
@@ -11058,14 +11058,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"katex@npm:0.16.15":
-  version: 0.16.15
-  resolution: "katex@npm:0.16.15"
+"katex@npm:0.16.18":
+  version: 0.16.18
+  resolution: "katex@npm:0.16.18"
   dependencies:
     commander: "npm:^8.3.0"
   bin:
     katex: cli.js
-  checksum: 10c0/bf1f553c7368821228c22d2cef61672fbaed96388226e27df1422925f8676502267343bcbad1fe4657d729390062c1009ac5fac952e987bc60531ce675049f84
+  checksum: 10c0/f80844710ae28d435395df522cf2439ce1be240cb5e7196e569e16459f705c232cd1335ff96bb6a76a3a87962ddebeb7e212e25271f11ad8f80a30dec575ba53
   languageName: node
   linkType: hard
 
