@@ -4,7 +4,7 @@
   "homepage": "https://rparini.github.io/cxroots-app",
   "private": true,
   "engines": {
-    "node": "22.12.0",
+    "node": "22.13.0",
     "yarn": "4.6.0"
   },
   "packageManager": "yarn@4.6.0",
@@ -37,7 +37,7 @@
     "jest-canvas-mock": "2.5.2",
     "prettier": "3.4.2",
     "react-scripts": "5.0.1",
-    "typescript": "5.7.2"
+    "typescript": "5.7.3"
   },
   "resolutions": {
     "nth-check@npm:^1.0.2": "2.0.1",
