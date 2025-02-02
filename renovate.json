@@ -6,6 +6,7 @@
   "prHourlyLimit": 0,
   "automerge": true,
   "automergeStrategy": "squash",
+  "automergeType": "branch",
   "gitIgnoredAuthors": ["renovate[bot]@users.noreply.github.com"],
   "pre-commit": {
     "enabled": true
