@@ -6531,7 +6531,7 @@ __metadata:
     gh-pages: "npm:6.3.0"
     jest-canvas-mock: "npm:2.5.2"
     katex: "npm:0.16.21"
-    mathjs: "npm:14.1.0"
+    mathjs: "npm:14.2.0"
     nerdamer: "npm:1.1.13"
     plotly.js: "npm:2.35.3"
     prettier: "npm:3.4.2"
@@ -11431,9 +11431,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mathjs@npm:14.1.0":
-  version: 14.1.0
-  resolution: "mathjs@npm:14.1.0"
+"mathjs@npm:14.2.0":
+  version: 14.2.0
+  resolution: "mathjs@npm:14.2.0"
   dependencies:
     "@babel/runtime": "npm:^7.25.7"
     "@lambdatest/node-tunnel": "npm:^4.0.8"
@@ -11447,7 +11447,7 @@ __metadata:
     typed-function: "npm:^4.2.1"
   bin:
     mathjs: bin/cli.js
-  checksum: 10c0/3795c540eb4ab7a78a2915e1582cbdae6f6f0cc3fa2679902c42be78023d07128e5c857c91c9af99a6e5343b06da74ba9df467e172549a660628b98ff54f76db
+  checksum: 10c0/55fe6aae231732c76e9570d80b41c0159451bddaf4f4ea485025739dd9e2207f7423dbd343d1f805104b5f33a61fd5a973f7e3e300801fbd776e5fe8f5c7c1d9
   languageName: node
   linkType: hard
 
