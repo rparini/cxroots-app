@@ -2654,19 +2654,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lambdatest/node-tunnel@npm:^4.0.8":
-  version: 4.0.8
-  resolution: "@lambdatest/node-tunnel@npm:4.0.8"
-  dependencies:
-    adm-zip: "npm:^0.5.10"
-    axios: "npm:^1.6.2"
-    get-port: "npm:^1.0.0"
-    https-proxy-agent: "npm:^5.0.0"
-    split: "npm:^1.0.1"
-  checksum: 10c0/e4040bee7937cac32f4427446d24230cb921c60cdb7a3fcb2370c3f920eb65049b79a5a0ee70c981c68866cb3ca85a2fdc3415c7a16e03128ae8d0003c66b03c
-  languageName: node
-  linkType: hard
-
 "@leichtgewicht/ip-codec@npm:^2.0.1":
   version: 2.0.5
   resolution: "@leichtgewicht/ip-codec@npm:2.0.5"
@@ -4579,13 +4566,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"adm-zip@npm:^0.5.10":
-  version: 0.5.16
-  resolution: "adm-zip@npm:0.5.16"
-  checksum: 10c0/6f10119d4570c7ba76dcf428abb8d3f69e63f92e51f700a542b43d4c0130373dd2ddfc8f85059f12d4a843703a90c3970cfd17876844b4f3f48bf042bfa6b49f
-  languageName: node
-  linkType: hard
-
 "agent-base@npm:6":
   version: 6.0.2
   resolution: "agent-base@npm:6.0.2"
@@ -5055,17 +5035,6 @@ __metadata:
   version: 4.7.0
   resolution: "axe-core@npm:4.7.0"
   checksum: 10c0/89ac5712b5932ac7d23398b4cb5ba081c394a086e343acc68ba49c83472706e18e0799804e8388c779dcdacc465377deb29f2714241d3fbb389cf3a6b275c9ba
-  languageName: node
-  linkType: hard
-
-"axios@npm:^1.6.2":
-  version: 1.7.9
-  resolution: "axios@npm:1.7.9"
-  dependencies:
-    follow-redirects: "npm:^1.15.6"
-    form-data: "npm:^4.0.0"
-    proxy-from-env: "npm:^1.1.0"
-  checksum: 10c0/b7a41e24b59fee5f0f26c1fc844b45b17442832eb3a0fb42dd4f1430eb4abc571fe168e67913e8a1d91c993232bd1d1ab03e20e4d1fee8c6147649b576fc1b0b
   languageName: node
   linkType: hard
 
@@ -6556,7 +6525,7 @@ __metadata:
     gh-pages: "npm:6.3.0"
     jest-canvas-mock: "npm:2.5.2"
     katex: "npm:0.16.21"
-    mathjs: "npm:14.2.0"
+    mathjs: "npm:14.2.1"
     nerdamer: "npm:1.1.13"
     plotly.js: "npm:3.0.0"
     prettier: "npm:3.4.2"
@@ -8407,16 +8376,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"follow-redirects@npm:^1.15.6":
-  version: 1.15.9
-  resolution: "follow-redirects@npm:1.15.9"
-  peerDependenciesMeta:
-    debug:
-      optional: true
-  checksum: 10c0/5829165bd112c3c0e82be6c15b1a58fa9dcfaede3b3c54697a82fe4a62dd5ae5e8222956b448d2f98e331525f05d00404aba7d696de9e761ef6e42fdc780244f
-  languageName: node
-  linkType: hard
-
 "font-atlas@npm:^2.1.0":
   version: 2.1.0
   resolution: "font-atlas@npm:2.1.0"
@@ -8493,17 +8452,6 @@ __metadata:
     combined-stream: "npm:^1.0.8"
     mime-types: "npm:^2.1.12"
   checksum: 10c0/1ccc3ae064a080a799923f754d49fcebdd90515a8924f0f54de557540b50e7f1fe48ba5f2bd0435a5664aa2d49729107e6aaf2155a9abf52339474c5638b4485
-  languageName: node
-  linkType: hard
-
-"form-data@npm:^4.0.0":
-  version: 4.0.1
-  resolution: "form-data@npm:4.0.1"
-  dependencies:
-    asynckit: "npm:^0.4.0"
-    combined-stream: "npm:^1.0.8"
-    mime-types: "npm:^2.1.12"
-  checksum: 10c0/bb102d570be8592c23f4ea72d7df9daa50c7792eb0cf1c5d7e506c1706e7426a4e4ae48a35b109e91c85f1c0ec63774a21ae252b66f4eb981cb8efef7d0463c8
   languageName: node
   linkType: hard
 
@@ -8724,15 +8672,6 @@ __metadata:
   version: 0.1.0
   resolution: "get-package-type@npm:0.1.0"
   checksum: 10c0/e34cdf447fdf1902a1f6d5af737eaadf606d2ee3518287abde8910e04159368c268568174b2e71102b87b26c2020486f126bfca9c4fb1ceb986ff99b52ecd1be
-  languageName: node
-  linkType: hard
-
-"get-port@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "get-port@npm:1.0.0"
-  bin:
-    get-port: cli.js
-  checksum: 10c0/36ba79f740789457f82c7bb6d2916718732f6dc9ca16b8ef4de97540b6da75cb574a9d1c8a16aa6fc2fc542166f37a10f102080deeb6c55ebb3fada1d7388cd1
   languageName: node
   linkType: hard
 
@@ -11486,12 +11425,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mathjs@npm:14.2.0":
-  version: 14.2.0
-  resolution: "mathjs@npm:14.2.0"
+"mathjs@npm:14.2.1":
+  version: 14.2.1
+  resolution: "mathjs@npm:14.2.1"
   dependencies:
     "@babel/runtime": "npm:^7.25.7"
-    "@lambdatest/node-tunnel": "npm:^4.0.8"
     complex.js: "npm:^2.2.5"
     decimal.js: "npm:^10.4.3"
     escape-latex: "npm:^1.2.0"
@@ -11502,7 +11440,7 @@ __metadata:
     typed-function: "npm:^4.2.1"
   bin:
     mathjs: bin/cli.js
-  checksum: 10c0/55fe6aae231732c76e9570d80b41c0159451bddaf4f4ea485025739dd9e2207f7423dbd343d1f805104b5f33a61fd5a973f7e3e300801fbd776e5fe8f5c7c1d9
+  checksum: 10c0/c15b197d58072c52df14feada9fb95ed8c598072407e5783d5d96b2cfccb42f534631a6771a449a0e7d40505a1f49f47f4ed114131b2bcb640da02655affd6bc
   languageName: node
   linkType: hard
 
@@ -13715,13 +13653,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"proxy-from-env@npm:^1.1.0":
-  version: 1.1.0
-  resolution: "proxy-from-env@npm:1.1.0"
-  checksum: 10c0/fe7dd8b1bdbbbea18d1459107729c3e4a2243ca870d26d34c2c1bcd3e4425b7bcc5112362df2d93cc7fb9746f6142b5e272fd1cc5c86ddf8580175186f6ad42b
-  languageName: node
-  linkType: hard
-
 "psl@npm:^1.1.33":
   version: 1.9.0
   resolution: "psl@npm:1.9.0"
@@ -15108,15 +15039,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"split@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "split@npm:1.0.1"
-  dependencies:
-    through: "npm:2"
-  checksum: 10c0/7f489e7ed5ff8a2e43295f30a5197ffcb2d6202c9cf99357f9690d645b19c812bccf0be3ff336fea5054cda17ac96b91d67147d95dbfc31fbb5804c61962af85
-  languageName: node
-  linkType: hard
-
 "sprintf-js@npm:^1.1.3":
   version: 1.1.3
   resolution: "sprintf-js@npm:1.1.3"
@@ -15847,13 +15769,6 @@ __metadata:
     readable-stream: "npm:~2.3.6"
     xtend: "npm:~4.0.1"
   checksum: 10c0/cbfe5b57943fa12b4f8c043658c2a00476216d79c014895cef1ac7a1d9a8b31f6b438d0e53eecbb81054b93128324a82ecd59ec1a4f91f01f7ac113dcb14eade
-  languageName: node
-  linkType: hard
-
-"through@npm:2":
-  version: 2.3.8
-  resolution: "through@npm:2.3.8"
-  checksum: 10c0/4b09f3774099de0d4df26d95c5821a62faee32c7e96fb1f4ebd54a2d7c11c57fe88b0a0d49cf375de5fee5ae6bf4eb56dbbf29d07366864e2ee805349970d3cc
   languageName: node
   linkType: hard
 

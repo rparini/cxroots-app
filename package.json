@@ -15,7 +15,7 @@
     "@mui/lab": "5.0.0-alpha.175",
     "@mui/material": "6.4.3",
     "katex": "0.16.21",
-    "mathjs": "14.2.0",
+    "mathjs": "14.2.1",
     "nerdamer": "1.1.13",
     "plotly.js": "3.0.0",
     "react": "19.0.0",
