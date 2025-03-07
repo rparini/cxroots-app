@@ -5,9 +5,8 @@ import micropip
 # The packages only seem to be loaded the first time the script is run
 await micropip.install(
     [
-        "https://files.pythonhosted.org/packages/97/fa/29467f8cbd3c1f8e687419fa6c2d3f8dc48308fd5a3ff2b4f221af3b1ea2/cxroots-2.0.0-py3-none-any.whl",
-        "https://files.pythonhosted.org/packages/ab/c0/b0d967160ecc8db52ae34e063937d85e8d386f140ad4826aae2086245a5e/numdifftools-0.9.39-py2.py3-none-any.whl",
-        "https://files.pythonhosted.org/packages/60/1d/9e398c53d6ae27d5ab312ddc16a9ffe1bee0dfdf1d6ec88c40b0ca97582e/numpydoc-1.1.0-py3-none-any.whl",
+        "cxroots==3.1.0",
+        "numpydoc==1.1.0",
     ]
 )
 
