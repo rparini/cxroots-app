@@ -5,9 +5,9 @@
   "private": true,
   "engines": {
     "node": "22.14.0",
-    "yarn": "4.9.0"
+    "yarn": "4.9.1"
   },
-  "packageManager": "yarn@4.9.0",
+  "packageManager": "yarn@4.9.1",
   "dependencies": {
     "@emotion/react": "11.14.0",
     "@emotion/styled": "11.14.0",
