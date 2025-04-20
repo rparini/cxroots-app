@@ -8,9 +8,8 @@
   "automergeStrategy": "squash",
   "automergeType": "branch",
   "gitIgnoredAuthors": ["renovate[bot]@users.noreply.github.com"],
-  "pre-commit": {
-    "enabled": true
-  },
+  "lockFileMaintenance": { "enabled": true },
+  "pre-commit": { "enabled": true },
   "packageRules": [
     {
       "groupName": "prettier",
