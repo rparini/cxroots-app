@@ -59,13 +59,19 @@ export function CxPlot({
   }
   const layout: Partial<Plotly.Layout> = {
     autosize: true,
-    title: functionText === "" ? "" : "$\\text{Roots of }" + functionText + "$",
+    title: {
+      text:
+        functionText === "" ? "" : "$\\text{Roots of }" + functionText + "$",
+    },
     xaxis: {
       scaleanchor: "y",
       scaleratio: 1,
       title: { text: "$\\text{Re}[z]$" },
     },
-    yaxis: { scaleratio: 1, title: { text: "$\\text{Im}[z]$" } },
+    yaxis: {
+      scaleratio: 1,
+      title: { text: "$\\text{Im}[z]$" },
+    },
     shapes: shapes,
   };
 
