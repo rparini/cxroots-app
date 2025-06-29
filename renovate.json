@@ -25,9 +25,7 @@
     {
       "customType": "regex",
       "managerFilePatterns": ["*.tsx"],
-      "matchStrings": [
-        "https://cdn.jsdelivr.net/pyodide/(?<currentValue>.*?)/"
-      ],
+      "matchStrings": ["pyodide/(?<currentValue>.*?)/"],
       "depNameTemplate": "pyodide",
       "datasourceTemplate": "pypi"
     }
