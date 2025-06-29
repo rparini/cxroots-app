@@ -20,5 +20,16 @@
       "matchDepNames": ["mathjax"],
       "allowedVersions": "<3"
     }
+  ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "managerFilePatterns": ["*.tsx"],
+      "matchStrings": [
+        "https://cdn.jsdelivr.net/pyodide/(?<currentValue>.*?)/"
+      ],
+      "depNameTemplate": "pyodide",
+      "datasourceTemplate": "pypi"
+    }
   ]
 }
