@@ -33,7 +33,7 @@
     {
       "customType": "regex",
       "managerFilePatterns": ["/.*\\.py$/"],
-      "matchStrings": ["\"(?<depName>)==(?<currentValue>.*?)\""],
+      "matchStrings": ["\"(?<depName>.*?)==(?<currentValue>.*?)\""],
       "datasourceTemplate": "pypi"
     }
   ]
