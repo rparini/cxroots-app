@@ -44,7 +44,7 @@ jobs:
           yarn install --immutable
           yarn playwright install
       - name: Run tests
-        run: yarn test --coverage
+        run: test:coverage
       - name: Upload coverage to Coveralls
         uses: coverallsapp/github-action@master
         with:
