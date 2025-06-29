@@ -18,30 +18,27 @@
     "mathjs": "14.3.0",
     "nerdamer": "1.1.13",
     "plotly.js": "3.0.1",
-    "react": "19.0.0",
-    "react-dom": "19.0.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
     "react-plotly.js": "2.6.0"
   },
   "devDependencies": {
-    "@babel/plugin-transform-private-property-in-object": "7.25.9",
-    "@testing-library/dom": "10.4.0",
-    "@testing-library/jest-dom": "6.6.3",
-    "@testing-library/react": "16.2.0",
-    "@testing-library/user-event": "14.6.1",
-    "@types/jest": "29.5.14",
     "@types/node": "^22.13.4",
     "@types/plotly.js": "2.35.2",
     "@types/react": "19.0.10",
     "@types/react-dom": "19.0.4",
     "@types/react-plotly.js": "2.6.3",
-    "@vitejs/plugin-react": "^4.3.4",
+    "@vitejs/plugin-react": "^4.6.0",
+    "@vitest/browser": "^3.2.4",
+    "@vitest/ui": "^3.2.4",
     "gh-pages": "6.3.0",
-    "jest-canvas-mock": "2.5.2",
+    "playwright": "^1.53.1",
     "prettier": "3.5.2",
-    "react-scripts": "5.0.1",
     "typescript": "5.8.2",
-    "vite": "^6.1.0",
-    "vite-tsconfig-paths": "^4.3.2"
+    "vite": "^7.0.0",
+    "vite-tsconfig-paths": "^4.3.2",
+    "vitest": "^3.2.4",
+    "vitest-browser-react": "^1.0.0"
   },
   "resolutions": {
     "nth-check@npm:^1.0.2": "2.0.1",
@@ -50,17 +47,10 @@
   "scripts": {
     "start": "vite",
     "build": "vite build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "test": "vitest",
+    "test:watch": "vitest - watch",
     "predeploy": "yarn run build",
-    "deploy": "gh-pages -d build",
-    "dev": "vite"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "deploy": "gh-pages -d build"
   },
   "browserslist": {
     "production": [

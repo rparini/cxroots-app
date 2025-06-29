@@ -1,11 +1,12 @@
-import React from "react";
-import { render, screen } from "@testing-library/react";
+/// <reference types="@vitest/browser/context" />
+import { expect, test } from "vitest";
+import { render } from "vitest-browser-react";
 import { App } from "./App";
+import React from "react";
 
-test("renders page", () => {
-  render(<App />);
-  const linkElement = screen.getByText("cxroots");
-  expect(linkElement).toBeInTheDocument();
+test("App renders", async () => {
+  const { getByText } = render(<App />);
+  await expect.element(getByText("cxroots")).toBeInTheDocument();
 });
 
 /** making any actual remote call times out in Jest */

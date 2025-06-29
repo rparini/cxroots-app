@@ -40,7 +40,9 @@ jobs:
       - name: Set yarn version
         run: yarn set version $(jq -r '.engines.yarn' package.json)
       - name: Install dependencies
-        run: yarn install --immutable
+        run: |
+          yarn install --immutable
+          yarn playwright install
       - name: Run tests
         run: yarn test --coverage
       - name: Upload coverage to Coveralls

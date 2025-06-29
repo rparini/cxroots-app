@@ -8,7 +8,13 @@ import tsconfigPaths from "vite-tsconfig-paths";
 export default defineConfig(({ mode }) => {
   setEnv(mode);
   return {
-    assetsInclude: ["**/*.py"], // Add Python files to assets
+    assetsInclude: ["**/*.py"], // Keep existing Python files as assets
+    build: {
+      assetsInlineLimit: 0, // Prevent inlining of Python files
+    },
+    optimizeDeps: {
+      exclude: ["*.py"], // Exclude Python files from dependency optimization
+    },
     plugins: [
       react(),
       tsconfigPaths(),
