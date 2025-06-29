@@ -37,7 +37,7 @@ yarn start
 
 ### Testing
 
-Tests are run with [Jest](https://jestjs.io/) and are invoked with
+Tests are run with [vitest](https://vitest.dev/) and are invoked with
 
 ```
 yarn test
