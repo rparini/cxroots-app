@@ -25,7 +25,7 @@
     {
       "customType": "regex",
       "managerFilePatterns": ["/.*\\.tsx$/"],
-      "matchStrings": ["pyodide/(?<currentValue>.*?)/"],
+      "matchStrings": ["pyodide/v(?<currentValue>.*?)/"],
       "depNameTemplate": "pyodide",
       "datasourceTemplate": "github-releases",
       "packageNameTemplate": "pyodide/pyodide"
