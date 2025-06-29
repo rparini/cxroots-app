@@ -27,7 +27,8 @@
       "managerFilePatterns": ["/.*\\.tsx$/"],
       "matchStrings": ["pyodide/(?<currentValue>.*?)/"],
       "depNameTemplate": "pyodide",
-      "datasourceTemplate": "pypi"
+      "datasourceTemplate": "github-releases",
+      "packageNameTemplate": "pyodide/pyodide"
     }
   ]
 }
