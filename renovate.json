@@ -29,6 +29,12 @@
       "depNameTemplate": "pyodide",
       "datasourceTemplate": "github-releases",
       "packageNameTemplate": "pyodide/pyodide"
+    },
+    {
+      "customType": "regex",
+      "managerFilePatterns": ["/.*\\.py$/"],
+      "matchStrings": ["\"(?<depName>)==(?<currentValue>.*?)\""],
+      "datasourceTemplate": "pypi"
     }
   ]
 }
