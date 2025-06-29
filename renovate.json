@@ -24,7 +24,7 @@
   "customManagers": [
     {
       "customType": "regex",
-      "managerFilePatterns": ["*.tsx"],
+      "managerFilePatterns": ["/.*\\.tsx$/"],
       "matchStrings": ["pyodide/(?<currentValue>.*?)/"],
       "depNameTemplate": "pyodide",
       "datasourceTemplate": "pypi"
