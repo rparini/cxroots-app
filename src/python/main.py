@@ -5,8 +5,8 @@ import micropip
 # The packages only seem to be loaded the first time the script is run
 await micropip.install(
     [
-        "cxroots==3.1.0",
-        "numpydoc==1.1.0",
+        "cxroots==3.2.0",
+        "numpydoc==1.9.0",
     ]
 )
 
