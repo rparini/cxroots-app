@@ -25,7 +25,7 @@
   "devDependencies": {
     "@types/node": "22.17.2",
     "@types/plotly.js": "3.0.3",
-    "@types/react": "19.1.10",
+    "@types/react": "19.1.11",
     "@types/react-dom": "19.1.7",
     "@types/react-plotly.js": "2.6.3",
     "@vitejs/plugin-react": "5.0.1",
