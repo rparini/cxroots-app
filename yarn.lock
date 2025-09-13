@@ -1589,12 +1589,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:22.18.1":
-  version: 22.18.1
-  resolution: "@types/node@npm:22.18.1"
+"@types/node@npm:22.18.3":
+  version: 22.18.3
+  resolution: "@types/node@npm:22.18.3"
   dependencies:
     undici-types: "npm:~6.21.0"
-  checksum: 10c0/1912b0ea6cb9ef59722b0fed64652388e13b41d52569c16198f1278a882837bbf4c8a4ec913e852893356f07c0c44b4e00fbca289ac7222741d03449104e22fe
+  checksum: 10c0/29ec5674a7eaac50c4c779e937c4449e813ff70c411eb525b6e12837e7b88c39219c3c2f29e39ea8f72cd6b7975f8696dc05f78c07bce35a241e0c9eaf5523a8
   languageName: node
   linkType: hard
 
@@ -1612,10 +1612,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/plotly.js@npm:*, @types/plotly.js@npm:3.0.3":
+"@types/plotly.js@npm:*":
   version: 3.0.3
   resolution: "@types/plotly.js@npm:3.0.3"
   checksum: 10c0/6a34d5f34b9b65a157856cf5b2b68789176299820211005e8028091c2ce3e4e67d95d7a39dd650afb13ba1c8965c0cd50a80800b94e23adb44a469c87a002307
+  languageName: node
+  linkType: hard
+
+"@types/plotly.js@npm:3.0.5":
+  version: 3.0.5
+  resolution: "@types/plotly.js@npm:3.0.5"
+  checksum: 10c0/ebe9b161332189d8765b3c3456765c694ab9271bdc1bc381f9dc0626d23e7319825a5925da4df57978e284aadd280e42149976be8052f773e98b6a7d3b410c90
   languageName: node
   linkType: hard
 
@@ -2479,8 +2486,8 @@ __metadata:
     "@matejmazur/react-katex": "npm:3.1.3"
     "@mui/lab": "npm:5.0.0-alpha.177"
     "@mui/material": "npm:7.3.2"
-    "@types/node": "npm:22.18.1"
-    "@types/plotly.js": "npm:3.0.3"
+    "@types/node": "npm:22.18.3"
+    "@types/plotly.js": "npm:3.0.5"
     "@types/react": "npm:19.1.12"
     "@types/react-dom": "npm:19.1.9"
     "@types/react-plotly.js": "npm:2.6.3"
