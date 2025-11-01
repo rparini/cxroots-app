@@ -4,7 +4,7 @@
   "homepage": "https://rparini.github.io/cxroots-app",
   "private": true,
   "engines": {
-    "node": "22.21.1",
+    "node": "24.11.0",
     "yarn": "4.10.3"
   },
   "packageManager": "yarn@4.10.3",
@@ -23,7 +23,7 @@
     "react-plotly.js": "2.6.0"
   },
   "devDependencies": {
-    "@types/node": "22.18.13",
+    "@types/node": "24.9.2",
     "@types/plotly.js": "3.0.8",
     "@types/react": "19.2.2",
     "@types/react-dom": "19.2.2",
