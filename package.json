@@ -4,7 +4,7 @@
   "homepage": "https://rparini.github.io/cxroots-app",
   "private": true,
   "engines": {
-    "node": "22.21.0",
+    "node": "22.21.1",
     "yarn": "4.10.3"
   },
   "packageManager": "yarn@4.10.3",
@@ -17,13 +17,13 @@
     "katex": "0.16.25",
     "mathjs": "15.0.0",
     "nerdamer": "1.1.13",
-    "plotly.js": "3.1.2",
+    "plotly.js": "3.2.0",
     "react": "19.2.0",
     "react-dom": "19.2.0",
     "react-plotly.js": "2.6.0"
   },
   "devDependencies": {
-    "@types/node": "22.18.12",
+    "@types/node": "22.18.13",
     "@types/plotly.js": "3.0.8",
     "@types/react": "19.2.2",
     "@types/react-dom": "19.2.2",

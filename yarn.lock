@@ -1597,12 +1597,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:22.18.12":
-  version: 22.18.12
-  resolution: "@types/node@npm:22.18.12"
+"@types/node@npm:22.18.13":
+  version: 22.18.13
+  resolution: "@types/node@npm:22.18.13"
   dependencies:
     undici-types: "npm:~6.21.0"
-  checksum: 10c0/13a4638f2baba3efba2b8bc369dd6f950dccbfca78f318f9c9f2c7adc11fce14fc119723c38567dada2d57a873c092b7356c024924d5974a08f3c1f93dc706c6
+  checksum: 10c0/4d97b447274f6e566fc5afb464146e9db77b5892c318364eb927b13441e6dbf9fe0ec9d1ed2cb6b5e7e85f5154a5ff52913d2cfc4b952bcf19fb0ddaaff5e533
   languageName: node
   linkType: hard
 
@@ -2497,7 +2497,7 @@ __metadata:
     "@matejmazur/react-katex": "npm:3.1.3"
     "@mui/lab": "npm:5.0.0-alpha.177"
     "@mui/material": "npm:7.3.4"
-    "@types/node": "npm:22.18.12"
+    "@types/node": "npm:22.18.13"
     "@types/plotly.js": "npm:3.0.8"
     "@types/react": "npm:19.2.2"
     "@types/react-dom": "npm:19.2.2"
@@ -2511,7 +2511,7 @@ __metadata:
     mathjs: "npm:15.0.0"
     nerdamer: "npm:1.1.13"
     playwright: "npm:1.56.1"
-    plotly.js: "npm:3.1.2"
+    plotly.js: "npm:3.2.0"
     prettier: "npm:3.6.2"
     react: "npm:19.2.0"
     react-dom: "npm:19.2.0"
@@ -4917,9 +4917,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"plotly.js@npm:3.1.2":
-  version: 3.1.2
-  resolution: "plotly.js@npm:3.1.2"
+"plotly.js@npm:3.2.0":
+  version: 3.2.0
+  resolution: "plotly.js@npm:3.2.0"
   dependencies:
     "@plotly/d3": "npm:3.8.2"
     "@plotly/d3-sankey": "npm:0.7.2"
@@ -4971,7 +4971,7 @@ __metadata:
     topojson-client: "npm:^3.1.0"
     webgl-context: "npm:^2.2.0"
     world-calendars: "npm:^1.0.4"
-  checksum: 10c0/bce71152f389dc1f54c08a42194d4ffaac2d93d7bb735a35adcb8e0dee3940ac975587623f44eae119e7a4b77b234f114cd9c1bf8c51e834fc3177bc2e083c2b
+  checksum: 10c0/47b9adaef211ac3072aef70a379df1bcf8be6cf9fe7586948b37cbcef6e6def27bde6fd1f8d239e8550bbc47517832fd5a211babdaede62079078476ce26b7ea
   languageName: node
   linkType: hard
 
