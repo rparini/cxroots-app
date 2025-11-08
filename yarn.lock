@@ -1597,12 +1597,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:24.9.2":
-  version: 24.9.2
-  resolution: "@types/node@npm:24.9.2"
+"@types/node@npm:24.10.0":
+  version: 24.10.0
+  resolution: "@types/node@npm:24.10.0"
   dependencies:
     undici-types: "npm:~7.16.0"
-  checksum: 10c0/7905d43f65cee72ef475fe76316e10bbf6ac5d08a7f0f6c38f2b6285d7ca3009e8fcafc8f8a1d2bf3f55889c9c278dbb203a9081fd0cf2d6d62161703924c6fa
+  checksum: 10c0/f82ed7194e16f5590ef7afdc20c6d09068c76d50278b485ede8f0c5749683536e3064ffa8def8db76915196afb3724b854aa5723c64d6571b890b14492943b46
   languageName: node
   linkType: hard
 
@@ -2497,7 +2497,7 @@ __metadata:
     "@matejmazur/react-katex": "npm:3.1.3"
     "@mui/lab": "npm:5.0.0-alpha.177"
     "@mui/material": "npm:7.3.5"
-    "@types/node": "npm:24.9.2"
+    "@types/node": "npm:24.10.0"
     "@types/plotly.js": "npm:3.0.8"
     "@types/react": "npm:19.2.2"
     "@types/react-dom": "npm:19.2.2"
@@ -2508,7 +2508,7 @@ __metadata:
     "@vitest/ui": "npm:3.2.4"
     gh-pages: "npm:6.3.0"
     katex: "npm:0.16.25"
-    mathjs: "npm:15.0.0"
+    mathjs: "npm:15.1.0"
     nerdamer: "npm:1.1.13"
     playwright: "npm:1.56.1"
     plotly.js: "npm:3.2.0"
@@ -2517,7 +2517,7 @@ __metadata:
     react-dom: "npm:19.2.0"
     react-plotly.js: "npm:2.6.0"
     typescript: "npm:5.9.3"
-    vite: "npm:7.1.12"
+    vite: "npm:7.2.2"
     vite-tsconfig-paths: "npm:4.3.2"
     vitest: "npm:3.2.4"
     vitest-browser-react: "npm:1.0.1"
@@ -4367,9 +4367,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mathjs@npm:15.0.0":
-  version: 15.0.0
-  resolution: "mathjs@npm:15.0.0"
+"mathjs@npm:15.1.0":
+  version: 15.1.0
+  resolution: "mathjs@npm:15.1.0"
   dependencies:
     "@babel/runtime": "npm:^7.26.10"
     complex.js: "npm:^2.2.5"
@@ -4382,7 +4382,7 @@ __metadata:
     typed-function: "npm:^4.2.1"
   bin:
     mathjs: bin/cli.js
-  checksum: 10c0/f79fc152d563f6c1957cd3f28863deffb1b71f36b080b988269945ffd4b6663f898469403539d1be0191c7d9a6a156837c4e47a7b39ebe3b6c5cb01b8d1c1e6b
+  checksum: 10c0/119de0d6f3ecb9b053e49ae5082f949982ecd2418a50f98d6f5f960a4d0b20311dacdad95e79d33be4baf38b9a441ebde80bb0653fd5f5137228e5199ce8e316
   languageName: node
   linkType: hard
 
@@ -6217,7 +6217,62 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:7.1.12, vite@npm:^5.0.0 || ^6.0.0 || ^7.0.0-0":
+"vite@npm:7.2.2":
+  version: 7.2.2
+  resolution: "vite@npm:7.2.2"
+  dependencies:
+    esbuild: "npm:^0.25.0"
+    fdir: "npm:^6.5.0"
+    fsevents: "npm:~2.3.3"
+    picomatch: "npm:^4.0.3"
+    postcss: "npm:^8.5.6"
+    rollup: "npm:^4.43.0"
+    tinyglobby: "npm:^0.2.15"
+  peerDependencies:
+    "@types/node": ^20.19.0 || >=22.12.0
+    jiti: ">=1.21.0"
+    less: ^4.0.0
+    lightningcss: ^1.21.0
+    sass: ^1.70.0
+    sass-embedded: ^1.70.0
+    stylus: ">=0.54.8"
+    sugarss: ^5.0.0
+    terser: ^5.16.0
+    tsx: ^4.8.1
+    yaml: ^2.4.2
+  dependenciesMeta:
+    fsevents:
+      optional: true
+  peerDependenciesMeta:
+    "@types/node":
+      optional: true
+    jiti:
+      optional: true
+    less:
+      optional: true
+    lightningcss:
+      optional: true
+    sass:
+      optional: true
+    sass-embedded:
+      optional: true
+    stylus:
+      optional: true
+    sugarss:
+      optional: true
+    terser:
+      optional: true
+    tsx:
+      optional: true
+    yaml:
+      optional: true
+  bin:
+    vite: bin/vite.js
+  checksum: 10c0/9c76ee441f8dbec645ddaecc28d1f9cf35670ffa91cff69af7b1d5081545331603f0b1289d437b2fa8dc43cdc77b4d96b5bd9c9aed66310f490cb1a06f9c814c
+  languageName: node
+  linkType: hard
+
+"vite@npm:^5.0.0 || ^6.0.0 || ^7.0.0-0":
   version: 7.1.12
   resolution: "vite@npm:7.1.12"
   dependencies:
