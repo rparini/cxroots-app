@@ -18,8 +18,8 @@
     "mathjs": "15.1.0",
     "nerdamer": "1.1.13",
     "plotly.js": "3.3.0",
-    "react": "19.2.1",
-    "react-dom": "19.2.1",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
     "react-plotly.js": "2.6.0"
   },
   "devDependencies": {
