@@ -4,7 +4,7 @@
   "reviewers": ["rparini"],
   "schedule": ["every weekend"],
   "prHourlyLimit": 0,
-  "minimumReleaseAge": 3,
+  "minimumReleaseAge": "3 days",
   "automerge": true,
   "automergeStrategy": "squash",
   "automergeType": "branch",
