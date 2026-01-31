@@ -18,14 +18,14 @@
     "mathjs": "15.1.0",
     "nerdamer": "1.1.13",
     "plotly.js": "3.3.1",
-    "react": "19.2.3",
-    "react-dom": "19.2.3",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
     "react-plotly.js": "2.6.0"
   },
   "devDependencies": {
     "@types/node": "24.10.9",
     "@types/plotly.js": "3.0.9",
-    "@types/react": "19.2.9",
+    "@types/react": "19.2.10",
     "@types/react-dom": "19.2.3",
     "@types/react-plotly.js": "2.6.4",
     "@vitejs/plugin-react": "5.1.2",
