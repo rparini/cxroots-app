@@ -23,7 +23,7 @@
     "react-plotly.js": "2.6.0"
   },
   "devDependencies": {
-    "@types/node": "24.10.13",
+    "@types/node": "24.10.15",
     "@types/plotly.js": "3.0.10",
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
