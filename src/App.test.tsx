@@ -1,12 +1,13 @@
 /// <reference types="@vitest/browser/context" />
 import { expect, test } from "vitest";
+import { page } from "vitest/browser";
 import { render } from "vitest-browser-react";
 import { App } from "./App";
 import React from "react";
 
 test("App renders", async () => {
-  const { getByText } = render(<App />);
-  await expect.element(getByText("cxroots")).toBeInTheDocument();
+  render(<App />);
+  await expect.element(page.getByText("cxroots")).toBeInTheDocument();
 });
 
 /** making any actual remote call times out in Jest */
