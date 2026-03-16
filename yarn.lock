@@ -1389,7 +1389,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vitest/browser-playwright@npm:^4.1.0":
+"@vitest/browser-playwright@npm:4.1.0":
   version: 4.1.0
   resolution: "@vitest/browser-playwright@npm:4.1.0"
   dependencies:
@@ -2067,7 +2067,7 @@ __metadata:
     "@types/react-plotly.js": "npm:2.6.4"
     "@vitejs/plugin-react": "npm:6.0.0"
     "@vitest/browser": "npm:4.1.0"
-    "@vitest/browser-playwright": "npm:^4.1.0"
+    "@vitest/browser-playwright": "npm:4.1.0"
     "@vitest/coverage-v8": "npm:4.1.0"
     "@vitest/ui": "npm:4.1.0"
     gh-pages: "npm:6.3.0"
