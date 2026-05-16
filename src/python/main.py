@@ -3,11 +3,13 @@ import micropip
 
 # These are packages that aren't bundled with pyodide so have to be installed from pypi
 # The packages only seem to be loaded the first time the script is run
+# deps=False is used so that all dependencies must be explicitly listed and pinned here
 await micropip.install(
     [
         "cxroots==3.2.0",
         "numpydoc==1.10.0",
-    ]
+    ],
+    deps=False,
 )
 
 from typing import Union
