@@ -17,7 +17,7 @@
     "katex": "0.17.0",
     "mathjs": "15.2.0",
     "nerdamer": "1.1.13",
-    "plotly.js": "3.5.1",
+    "plotly.js": "3.6.0",
     "react": "19.2.7",
     "react-dom": "19.2.7",
     "react-plotly.js": "2.6.0"
@@ -37,7 +37,7 @@
     "playwright": "1.60.0",
     "prettier": "3.8.3",
     "typescript": "6.0.3",
-    "vite": "8.0.14",
+    "vite": "8.0.16",
     "vite-tsconfig-paths": "6.1.1",
     "vitest": "4.1.8",
     "vitest-browser-react": "2.2.0"
