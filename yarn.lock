@@ -1159,17 +1159,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/plotly.js@npm:*":
+"@types/plotly.js@npm:*, @types/plotly.js@npm:3.0.13":
   version: 3.0.13
   resolution: "@types/plotly.js@npm:3.0.13"
   checksum: 10c0/10ffe58c172366221b67a85c531218481b6fd40152836b88da1db2e58b90fd4f19bdfe781f89be8b3b656b5c01d459502336d6a7ad3b5b7069f5b7f56a67aa67
-  languageName: node
-  linkType: hard
-
-"@types/plotly.js@npm:3.0.12":
-  version: 3.0.12
-  resolution: "@types/plotly.js@npm:3.0.12"
-  checksum: 10c0/5bdf7be3769118178ec6bfe5346233eda61fba061e4191c8a3d968f9fd6e2a69151bd0af1c58aa56339242900826ae02b47340e3559ffb7c2ec44ca4aa34c140
   languageName: node
   linkType: hard
 
@@ -1996,7 +1989,7 @@ __metadata:
     "@mui/lab": "npm:5.0.0-alpha.177"
     "@mui/material": "npm:9.3.1"
     "@types/node": "npm:24.13.3"
-    "@types/plotly.js": "npm:3.0.12"
+    "@types/plotly.js": "npm:3.0.13"
     "@types/react": "npm:19.2.18"
     "@types/react-dom": "npm:19.2.4"
     "@types/react-plotly.js": "npm:2.6.4"
@@ -2006,7 +1999,7 @@ __metadata:
     "@vitest/coverage-v8": "npm:4.1.10"
     "@vitest/ui": "npm:4.1.10"
     gh-pages: "npm:6.3.0"
-    katex: "npm:0.18.1"
+    katex: "npm:0.18.4"
     mathjs: "npm:15.2.0"
     nerdamer: "npm:1.1.13"
     playwright: "npm:1.62.1"
@@ -3368,14 +3361,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"katex@npm:0.18.1":
-  version: 0.18.1
-  resolution: "katex@npm:0.18.1"
+"katex@npm:0.18.4":
+  version: 0.18.4
+  resolution: "katex@npm:0.18.4"
   dependencies:
     commander: "npm:^8.3.0"
   bin:
     katex: cli.js
-  checksum: 10c0/287994eef74096044127f0adde40b284c5dd914e7642212d957da5b62ed8312ace8c87701ddf0cf06ce484aa6ba72f4344376fa3f2d785e5ee65bfa1141f7fc2
+  checksum: 10c0/a8ecf3079c1748c15856b25f4175a98b6fc5d8e7f567afe8dcf4f63673159036fd2c50527621ec338c6144ae8e18a0103ffd820e175165f6659881c9d9a711b9
   languageName: node
   linkType: hard
 
