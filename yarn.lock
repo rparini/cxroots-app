@@ -1040,6 +1040,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/d3@npm:^3.5.53":
+  version: 3.5.53
+  resolution: "@types/d3@npm:3.5.53"
+  checksum: 10c0/1ffab5a29e9a5eb2fe976b38333a085406b3f1f3d0d1ed07d2947217ad891e61c95b06d74bb7db378b7d6ea51df93bc7c57edfcade45dadd4dff7e0f7c415507
+  languageName: node
+  linkType: hard
+
 "@types/deep-eql@npm:*":
   version: 4.0.2
   resolution: "@types/deep-eql@npm:4.0.2"
@@ -1753,7 +1760,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"country-iso-search@npm:^0.1.1":
+"country-iso-search@npm:^0.1.2":
   version: 0.1.2
   resolution: "country-iso-search@npm:0.1.2"
   checksum: 10c0/931a8ccd91e62b2d32434e0d83ef4a36433bc00aebfa4fcb4e9ca78717b17af7670f87570657cff7860bb39a4bb17ffa62c621d1dcc5b1d15234b52f8db1a096
@@ -1853,11 +1860,11 @@ __metadata:
     "@vitest/coverage-v8": "npm:5.0.0"
     "@vitest/ui": "npm:5.0.0"
     gh-pages: "npm:6.3.0"
-    katex: "npm:0.18.5"
+    katex: "npm:0.18.7"
     mathjs: "npm:15.2.0"
     nerdamer: "npm:1.1.13"
     playwright: "npm:1.62.1"
-    plotly.js: "npm:4.0.0"
+    plotly.js: "npm:4.1.0"
     prettier: "npm:3.9.6"
     react: "npm:19.2.8"
     react-dom: "npm:19.2.8"
@@ -1866,7 +1873,7 @@ __metadata:
     vite: "npm:8.2.2"
     vite-tsconfig-paths: "npm:6.1.1"
     vitest: "npm:5.0.0"
-    vitest-browser-react: "npm:2.2.0"
+    vitest-browser-react: "npm:2.3.0"
   languageName: unknown
   linkType: soft
 
@@ -3119,14 +3126,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"katex@npm:0.18.5":
-  version: 0.18.5
-  resolution: "katex@npm:0.18.5"
+"katex@npm:0.18.7":
+  version: 0.18.7
+  resolution: "katex@npm:0.18.7"
   dependencies:
     commander: "npm:^15.0.0"
   bin:
     katex: cli.js
-  checksum: 10c0/b0298f887ecf772dc849c176b3518afe22d40f37e5e4fccd9962c4799bee94f4e1cd7a831725123972b99242e02de8396a4a36be4bbf1fb5460775b3f5ef6218
+  checksum: 10c0/191b690af9099fb25b595270b9da191cd37c9b45d7773188112ad7831e74a4a3e07f10e1e1bdd656daa8794e744cefd03d079eb05be49983ac578bcb2ce857df
   languageName: node
   linkType: hard
 
@@ -3782,19 +3789,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"plotly.js@npm:4.0.0":
-  version: 4.0.0
-  resolution: "plotly.js@npm:4.0.0"
+"plotly.js@npm:4.1.0":
+  version: 4.1.0
+  resolution: "plotly.js@npm:4.1.0"
   dependencies:
     "@plotly/d3": "npm:3.8.2"
     "@plotly/d3-sankey": "npm:0.12.3"
     "@plotly/d3-sankey-circular": "npm:0.33.1"
+    "@plotly/point-cluster": "npm:^3.1.9"
     "@plotly/regl": "npm:^2.1.2"
     "@turf/area": "npm:^7.3.5"
     "@turf/centroid": "npm:^7.3.5"
     "@turf/meta": "npm:^7.3.5"
+    "@types/d3": "npm:^3.5.53"
     base64-arraybuffer: "npm:^1.0.2"
-    country-iso-search: "npm:^0.1.1"
+    country-iso-search: "npm:^0.1.2"
     culori: "npm:^4.0.2"
     d3-force: "npm:^1.2.1"
     d3-format: "npm:^1.4.5"
@@ -3826,7 +3835,7 @@ __metadata:
     topojson-client: "npm:^3.1.0"
     webgl-context: "npm:^2.2.0"
     world-calendars: "npm:^1.0.4"
-  checksum: 10c0/9a7dd0d690618753184f00d450e5631943be97e36d2daa8206142640b22e427677164725483fd166bf6ae253fcd1e9260c460f849a0c0cd482379c6ee90d30c2
+  checksum: 10c0/73682b2fb218232b37f07832c1f42aed397ce8e2835995e1b24a51a20f569a47288ad234b97b91c5c23da1c3ea1a547ae66007886312923c813fee899ae059e1
   languageName: node
   linkType: hard
 
@@ -4918,21 +4927,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vitest-browser-react@npm:2.2.0":
-  version: 2.2.0
-  resolution: "vitest-browser-react@npm:2.2.0"
+"vitest-browser-react@npm:2.3.0":
+  version: 2.3.0
+  resolution: "vitest-browser-react@npm:2.3.0"
   peerDependencies:
     "@types/react": ^18.0.0 || ^19.0.0
     "@types/react-dom": ^18.0.0 || ^19.0.0
     react: ^18.0.0 || ^19.0.0
     react-dom: ^18.0.0 || ^19.0.0
-    vitest: ^4.0.0
+    vitest: ^4.0.0 || ^5.0.0
   peerDependenciesMeta:
     "@types/react":
       optional: true
     "@types/react-dom":
       optional: true
-  checksum: 10c0/d2e582e564cf7f65f19a5a9c36b0b136e84fc6dabd42566703d79e0b220094a5a88a9197a42b2c4779f38977d79c8f3306387cd7edd2ef8e57790b921a759975
+  checksum: 10c0/cd3a722d1870c9f6c10c8140c469ad9603e33f88b2c5b1c261f13c4efcca1a1263100a9a4916de868106bc8a861211def81c650c4736b3505de03ebf255c98d1
   languageName: node
   linkType: hard
 

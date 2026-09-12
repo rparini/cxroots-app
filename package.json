@@ -14,10 +14,10 @@
     "@matejmazur/react-katex": "3.1.3",
     "@mui/lab": "5.0.0-alpha.177",
     "@mui/material": "9.4.0",
-    "katex": "0.18.5",
+    "katex": "0.18.7",
     "mathjs": "15.2.0",
     "nerdamer": "1.1.13",
-    "plotly.js": "4.0.0",
+    "plotly.js": "4.1.0",
     "react": "19.2.8",
     "react-dom": "19.2.8",
     "react-plotly.js": "4.1.0"
@@ -40,7 +40,7 @@
     "vite": "8.2.2",
     "vite-tsconfig-paths": "6.1.1",
     "vitest": "5.0.0",
-    "vitest-browser-react": "2.2.0"
+    "vitest-browser-react": "2.3.0"
   },
   "scripts": {
     "start": "vite",
