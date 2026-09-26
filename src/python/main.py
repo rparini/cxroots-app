@@ -7,7 +7,7 @@ import micropip
 await micropip.install(
     [
         "cxroots==3.2.0",
-        "numpydoc==1.10.0",
+        "numpydoc==1.11.0",
     ],
     deps=False,
 )
