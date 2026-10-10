@@ -1857,7 +1857,7 @@ __metadata:
     gh-pages: "npm:6.3.0"
     katex: "npm:0.19.0"
     mathjs: "npm:15.2.0"
-    nerdamer: "npm:1.1.13"
+    nerdamer: "npm:2.0.0"
     playwright: "npm:1.63.0"
     plotly.js: "npm:4.1.2"
     prettier: "npm:3.9.9"
@@ -3468,10 +3468,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nerdamer@npm:1.1.13":
-  version: 1.1.13
-  resolution: "nerdamer@npm:1.1.13"
-  checksum: 10c0/356adcf0dfea6a9813da90347434ced17fd313659e310132a2bd6b89c972bb5bda07f2a3d8598063ed27eeb8d1ebd6a391f4eb0d2672936499674b790383e612
+"nerdamer@npm:2.0.0":
+  version: 2.0.0
+  resolution: "nerdamer@npm:2.0.0"
+  dependencies:
+    decimal.js: "npm:^10.4.3"
+  checksum: 10c0/d3a6c1eb280feee5984af9e8329a9bdb6a7bf85e90207b154678d92e2b5207de2f70fbcdfceb41027eecb1c99b7b698706862cf6d65b80cabb4d543cbcd41816
   languageName: node
   linkType: hard
 

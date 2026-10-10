@@ -16,7 +16,7 @@
     "@mui/material": "9.4.0",
     "katex": "0.19.0",
     "mathjs": "15.2.0",
-    "nerdamer": "1.1.13",
+    "nerdamer": "2.0.0",
     "plotly.js": "4.1.2",
     "react": "19.3.0",
     "react-dom": "19.3.0",
