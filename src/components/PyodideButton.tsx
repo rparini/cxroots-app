@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { LoadingButton } from "@mui/lab";
 
-const pyodideURL = "https://cdn.jsdelivr.net/pyodide/v314.0.7/full/";
+const pyodideURL = "https://cdn.jsdelivr.net/pyodide/v314.0.8/full/";
 
 declare global {
   interface Window {
